@@ -1,0 +1,40 @@
+.gs-table {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  font-size: 12px;
+  box-sizing: border-box; }
+  .gs-table th {
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #f8f8f9; }
+  .gs-table td {
+    border: 0px;
+    height: 40px;
+    white-space: nowrap; }
+
+.gs-table-cell {
+  padding-left: 18px;
+  padding-right: 18px; }
+
+.gs-table-head table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%; }
+
+.gs-table-tbody {
+  box-sizing: border-box; }
+  .gs-table-tbody table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%; }
+
+.gs-table-tr {
+  background: #fff; }
+
+.gs-table-tr:hover {
+  transition: background-color .2s ease-in-out;
+  background: #ebf7ff; }
+
+/*# sourceMappingURL=index.css.map */

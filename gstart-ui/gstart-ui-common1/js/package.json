@@ -1,0 +1,17 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^1.15.0"
+  },
+  "dependencies": {
+    "es3ify-loader": "^0.2.0"
+  }
+}

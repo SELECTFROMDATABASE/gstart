@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/util/ConnectUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/util/FileUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/util/RandomUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/util/StreamUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/util/XMLUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/org/ygy/chat/servlet/Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/org/ygy/chat/util/PlaceUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/org/ygy/chat/util/SignUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-cms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-cms/gstart-cms-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-cms/gstart-cms-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/ConnectUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/DateUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/RandomUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-demo/gstart-demo-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-ui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

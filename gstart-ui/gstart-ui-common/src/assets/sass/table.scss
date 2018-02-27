@@ -1,0 +1,47 @@
+.gs-table{
+  width: 100%;
+  overflow: hidden;
+  background-color: $table-bg;
+  font-size: 12px;
+  box-sizing: border-box;
+  th{
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: $table-th-bg;
+  }
+  td{
+    border: 0px;
+    height: 40px;
+    white-space: nowrap;
+  }
+}
+.gs-table-cell{
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.gs-table-head{
+  table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .gs-table-cell{
+  }
+}
+.gs-table-tbody{
+  table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+  box-sizing: border-box;
+}
+.gs-table-tr{
+  background: $table-tr-bg;
+}
+.gs-table-tr:hover{
+  transition: background-color .2s ease-in-out;
+  background: $table-tr-bg-hover;
+}
