@@ -19,8 +19,6 @@ public class DemoController extends BaseController {
 
     @RequestMapping(value = "/a" ,method = RequestMethod.GET)
     public String jsp(){
-        String s = "test";
-
         return demoService.sayHello();
     }
 
