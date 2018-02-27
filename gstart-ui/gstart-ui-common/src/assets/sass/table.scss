@@ -30,13 +30,28 @@
   }
 }
 .gs-table-tbody{
+  box-sizing: border-box;
+  overflow: auto;
   table{
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
-
+    .gs-table-tr:nth-child(2n){
+      background-color: #f8f8f9;
+    }
+    .gs-table-tr:nth-child(2n):hover{
+      background-color: $table-tr-bg-hover;
+    }
+    .gs-table-cell-small{
+      height: 20px;
+    }
+    .gs-table-cell-middle{
+      height: 40px;
+    }
+    .gs-table-cell-big{
+      height: 60px;
+    }
   }
-  box-sizing: border-box;
 }
 .gs-table-tr{
   background: $table-tr-bg;
