@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import TableCell from './gs-table-cell'
+  import TableCell from './table-cell'
     export default {
       props: {tableHeads:Array},
       components: {TableCell},

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Table :table-heads="colums" :data-list="data"></Table>
+    <gs-table :table-heads="colums" :data-list="data"></gs-table>
   </div>
 </template>
 <script>
