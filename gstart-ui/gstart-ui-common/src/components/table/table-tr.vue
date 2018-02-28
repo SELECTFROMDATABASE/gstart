@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "table-tr"
+        name: "gs-table-tr"
     }
 </script>
 

@@ -13,15 +13,15 @@
 </template>
 
 <script>
-    import TableTr from "./table-tr";
-    import TableCell from "./table-cell";
+    import TableTr from "./gs-table-tr";
+    import TableCell from "./gs-table-cell";
 
     export default {
       props:{dataList:Array},
       components: {
         TableCell,
         TableTr},
-      name: "table-body"
+      name: "gs-table-body"
     }
 </script>
 
