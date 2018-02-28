@@ -4,6 +4,7 @@
       <table-head :table-heads="tableHeads"></table-head>
     </div>
     <div class="gs-table-tbody">
+      test
       <table-body :data-list="dataList"></table-body>
     </div>
   </div>
