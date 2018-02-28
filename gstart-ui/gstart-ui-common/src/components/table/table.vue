@@ -10,14 +10,14 @@
 </template>
 
 <script>
-  import TableHead from './table-head';
-  import TableBody from "./table-body";
+  import TableHead from './gs-table-head';
+  import TableBody from "./gs-table-body";
     export default {
       props: {tableHeads:Array,dataList:Array},
       components: {
         TableBody,
         TableHead},
-      name: "Test"
+      name: "gs-table"
     }
 </script>
 

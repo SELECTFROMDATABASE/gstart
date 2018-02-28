@@ -5,7 +5,7 @@
 <script>
     export default {
         props:{cellData:[String,Number]},
-        name: "Table-cell"
+        name: "gs-table-cell"
     }
 </script>
 
