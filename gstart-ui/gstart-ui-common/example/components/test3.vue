@@ -1,7 +1,7 @@
 <template>
-  <div>
+<div>
     <gs-radio :label="label"></gs-radio>
-  </div>
+</div>
 </template>
 <script>
   import Radio from "../../src/components/radio/radio";

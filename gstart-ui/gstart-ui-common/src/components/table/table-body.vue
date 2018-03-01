@@ -13,8 +13,8 @@
 </template>
 
 <script>
-    import TableTr from "./gs-table-tr";
-    import TableCell from "./gs-table-cell";
+    import TableTr from "./table-tr";
+    import TableCell from "./table-cell";
 
     export default {
       props:{dataList:Array},

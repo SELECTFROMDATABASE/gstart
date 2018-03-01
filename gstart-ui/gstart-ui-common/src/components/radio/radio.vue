@@ -1,8 +1,8 @@
 <template>
     <label>
-      <span class="gs-radio">
-        <span class="gs-radio-inner"></span>
-        <input class="gs-radio-input" type="radio"/>
+      <span >
+        <span ></span>
+        <input type="radio"/>
       </span>
       {{label}}
     </label>
