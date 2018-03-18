@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAU;EACR,MAAM,EAAE,cAAc;EACtB,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,YAAY;EACrB,aAAa,EAAE,IAAI;EACnB,MAAM,EAAE,OAAO;EACf,gBAAgB,EAAE,IAAI",
+"sources": ["../sass/switch.scss"],
+"names": [],
+"file": "switch.css"
+}

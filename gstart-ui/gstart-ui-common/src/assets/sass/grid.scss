@@ -1,0 +1,18 @@
+@import "mixins/_grid-framework";
+// 创建xs columns
+@include make-grid(xs);
+
+// 给column设置float属性
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+}
+
+// 这个跟上面的make-grid-columns差不多
+@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-#{$class}-#{$i}";
+  }
+  #{$list} {
+    float: left;
+  }
+}

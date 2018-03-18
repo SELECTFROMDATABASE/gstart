@@ -3,8 +3,10 @@
   padding: 0;
   text-indent: 0;
 }
-
+@import "../font/iconfont.css";
 @import "_variables";
 @import "table";
 @import "radio";
 @import "check-box";
+@import "switch";
+@import "select";
