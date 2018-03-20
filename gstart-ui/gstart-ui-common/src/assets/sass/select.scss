@@ -1,9 +1,16 @@
-.gs-select{
+.gs-select,gs-select-selection,gs-select-single,gs-select-selected-value,gs-select-palceholder{
   vertical-align: middle;
   font-size: 14px;
   box-sizing: border-box;
-  line-height: normal;
-  display: inline-block;
+  display: block;
+  vertical-align: middle;
+  height: 30px;
+  line-height: 30px;
+}
+.gs-select-selected-value,gs-select-palceholder{
+  display: block;
+  padding-left: 8px;
+  padding-right: 28px;
 }
 .gs-select-selection{
   display: block;
