@@ -1,5 +1,5 @@
 <template>
-  <div class="gs-select gs-select-single">
+  <div class="gs-select gs-select-single gs-select-disabled">
     <div class="gs-select-selection">
       <input type="hidden"/>
       <span class="gs-select-palceholder" >请输入</span>
