@@ -1,4 +1,8 @@
 .gs-select-dropdown-list{
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+.gs-select-dropdown{
+  height: 200px;
+  
 }

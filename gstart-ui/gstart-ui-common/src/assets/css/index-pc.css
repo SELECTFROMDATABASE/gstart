@@ -257,8 +257,7 @@
 .gs-select-selected-value, gs-select-palceholder {
   display: block;
   padding-left: 8px;
-  padding-right: 28px;
-  color: red; }
+  padding-right: 28px; }
 
 .gs-select-selection {
   width: 100%;
@@ -337,13 +336,11 @@
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: absolute;
   z-index: 900; }
 
 .gs-select-dropdown-list {
   display: block;
-  height: 100%;
-  overflow-y: scroll;
   list-style: none; }
   .gs-select-dropdown-list .gs-select-item-disabled {
     cursor: not-allowed;
@@ -361,6 +358,9 @@
 
 .gs-select-dropdown-list {
   height: 100%;
-  overflow: scroll; }
+  overflow-y: scroll; }
+
+.gs-select-dropdown {
+  height: 200px; }
 
 /*# sourceMappingURL=index-pc.css.map */
