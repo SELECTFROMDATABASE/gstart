@@ -11,8 +11,10 @@
   display: block;
   padding-left: 8px;
   padding-right: 28px;
+  color: red;
 }
 .gs-select-selection{
+  width: 100%;
   display: block;
   box-sizing: border-box;
   outline: 0;
@@ -24,6 +26,22 @@
   transition: all .2s ease-in-out;
   &:hover{
     border-color: #57a3f3;
+  }
+}
+.gs-select-item{
+  display: block;
+  margin: 0;
+  line-height: normal;
+  padding: 7px 16px;
+  clear: both;
+  color: #495060;
+  font-size: 12px!important;
+  white-space: nowrap;
+  list-style: none;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  &:hover{
+    background-color: #f3f3f3;
   }
 }
 .gs-select-single{
@@ -45,6 +63,22 @@
       padding-right: 24px;
     }
   }
+  .gs-select-dropdown-list .gs-select-item-selected{
+    color: #fff;
+    background: rgba(45,140,240,.9);
+    &:hover{
+      color: #fff;
+      background: rgba(45,140,240,.9);
+    }
+  }
+}
+.gs-select-disabled{
+  .gs-select-selection{
+    cursor: not-allowed;
+    color: #ccc;
+    opacity: 1;
+    background-color: #f3f3f3;
+  }
 }
 .gs-select-arrow{
   position: absolute;
@@ -57,7 +91,7 @@
   transition: all .2s ease-in-out;
 }
 .gs-select-dropdown{
-  width: inherit;
+  width: 100%;
   max-height: 200px;
   overflow: auto;
   margin: 5px 0;
@@ -66,25 +100,40 @@
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 1px 6px rgba(0,0,0,.2);
-  position: absolute;
+  position: relative;
   z-index: 900;
 }
 .gs-select-dropdown-list{
-  list-style: none;
-}
-.gs-select-item{
   display: block;
-  margin: 0;
-  line-height: normal;
-  padding: 7px 16px;
-  clear: both;
-  color: #495060;
-  font-size: 12px!important;
-  white-space: nowrap;
+  height: 100%;
+  overflow-y: scroll;
   list-style: none;
-  cursor: pointer;
-  transition: background .2s ease-in-out;
-  &:hover{
-    background-color: #f3f3f3;
+  .gs-select-item-disabled{
+    cursor: not-allowed;
+    color: #ccc;
+    &:hover{
+      background-color: #fff;
+    }
   }
+  .gs-select-group-list-warp{
+    display: block;
+    .gs-select-group-list-title{
+      padding-left: 5px;
+      font-size: 12px;
+      color: #999;
+      height: 30px;
+      line-height: 30px;
+    }
+    .gs-select-group{
+      .gs-select-item{
+
+      }
+    }
+  }
+
 }
+
+.gs-select-item-selected{
+
+}
+

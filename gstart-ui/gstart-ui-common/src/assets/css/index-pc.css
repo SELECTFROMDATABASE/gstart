@@ -359,4 +359,8 @@
       height: 30px;
       line-height: 30px; }
 
-/*# sourceMappingURL=index.css.map */
+.gs-select-dropdown-list {
+  height: 100%;
+  overflow: scroll; }
+
+/*# sourceMappingURL=index-pc.css.map */
