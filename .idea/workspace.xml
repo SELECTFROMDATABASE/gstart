@@ -7,113 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee0cb55a-7ccb-4d48-a746-843a4ab9f9bb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/aspect/ControllerLogAspect.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/aspect/RPCLogAspect.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/base/BaseController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/ConnectUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/DateUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/DefaultTrustManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/FileUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/QRCodeUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/RandomUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/StreamUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/StringUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/util/XMLUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/resources/application-servlet.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-common/src/main/resources/log4j.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-dao/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-dao/src/main/java/com/gstart/demo/dao/dao/DemoDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-dao/src/main/java/com/gstart/demo/dao/daoimpl/DemoDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-dao/src/main/java/com/gstart/demo/dao/pojo/Demo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-dao/src/main/resources/hibernate.cfg.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api/src/main/java/com/gstart/demo/rpc/api/DemoService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api/src/main/java/com/gstart/demo/rpc/api/bean/Message.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/assembly/assembly.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/assembly/bin/start.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/java/com/gstart/demo/service/impl/DemoServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/java/com/gstart/demo/service/impl/Start.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/resources/applicationContext-dubbo-service.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/aspect/ControllerLogAspect.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/aspect/RPCLogAspect.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/com/gstart/demo/web/controller/DemoController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/resources/applicationContext-dubbo-consumer.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/resources/springMVC-servlet.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/webapp/WEB-INF/jsp/test.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/webapp/WEB-INF/jsp/test1.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-demo/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/app.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/bin/www" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/package-lock.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/public/stylesheets/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/routes/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/routes/users.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/views/error.hbs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/views/index.hbs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-demo-app/views/layout.hbs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/.babelrc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/.editorconfig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/.postcssrc.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/bin/dev.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/build.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/check-versions.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/utils.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/vue-loader.conf.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/webpack.base.conf.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/webpack.dev.conf.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/build/webpack.prod.conf.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/config.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/config/dev.env.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/config/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/config/prod.env.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/App.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/components/test1.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/components/test2.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/main.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/package-lock.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/index-pc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/index-pc.css.map" />
       <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/index.css" />
       <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/index.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/test.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/test.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/_variables.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/index.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/table.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table-body.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table-cell.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table-head.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table-tr.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/static/.gitkeep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/img/very_sorry.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/build.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/lib/jquery-3.3.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/lib/require.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/package-lock.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/public/gstart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/core/core.helper.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/core/core.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/core/test.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/form/form.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/form/form.util.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/form/form.validate.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/gstart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/util/util.date.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/src/util/util.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common1/js/webpack.config.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/select-pc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/select-pc.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/index-pc.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/layout.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/select-pc.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/option-group.vue" />
+      <change beforePath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/select.scss" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/select.scss" />
+      <change beforePath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/drop.vue" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/drop.vue" />
+      <change beforePath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/select.vue" afterPath="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/select.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/gstart-common/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -173,7 +79,40 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="select.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/select.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drop.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/drop.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="34" />
+              <folding>
+                <marker date="1521639575515" expanded="true" signature="793:820" ph="{&quot;name&quot;: &quot;gs-drop&quot;...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/select.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -206,6 +145,7 @@
       <find>dubo</find>
       <find>spring</find>
       <find>dub</find>
+      <find>gs-select-dropdown</find>
     </findStrings>
     <dirStrings>
       <dir>E:\person\gstart\gstart-ui\gstart-ui-common\js</dir>
@@ -213,7 +153,10 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="FORCE_PUSH_ALLOWED" value="false" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -223,14 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/DemoController.java" />
-        <option value="$PROJECT_DIR$/gstart-common/src/main/java/com.gstart.common/util/QRCodeUtil.java" />
-        <option value="$PROJECT_DIR$/gstart-common/src/main/java/com.gstart.common/util/RandomUtil.java" />
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/web/WEB-INF/jsp/test.jsp" />
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/resources/content.properties" />
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/assembly/assembly.fxml" />
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/com/gstart/demo/web/bean/Girl.java" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api/src/main/java/com/gstart/demo/rpc/api/LiveService.java" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/java/com/gstart/demo/service/impl/LiveServiceImpl.java" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api/src/main/java/com/gstart/demo/rpc/api/PlayService.java" />
@@ -241,7 +176,6 @@
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/resources/applicationContext-dubbo-consumer.xml" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/assembly/bin/start.bat" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/assembly/assembly.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/pom.xml" />
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/java/com/gstart/demo/service/impl/Start.java" />
         <option value="$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/base/BaseController.java" />
@@ -268,12 +202,21 @@
         <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/webapp/WEB-INF/jsp/test.jsp" />
         <option value="$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.5.3/dubbo-2.5.3.pom" />
         <option value="$PROJECT_DIR$/gstart-common/pom.xml" />
-        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/com/gstart/demo/web/controller/DemoController.java" />
         <option value="$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/chat/thread/Access_TokenThread.java" />
         <option value="$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/com/ygy/chat/service/CoreService.java" />
         <option value="$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/org/ygy/chat/servlet/Test.java" />
         <option value="$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/org/ygy/chat/servlet/SourseServlet.java" />
         <option value="$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin/src/main/java/org/ygy/chat/servlet/CoreServlet.java" />
+        <option value="$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/com/gstart/demo/web/controller/DemoController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table.vue" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table-body.vue" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/radio/radio.vue" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/components/test3.vue" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/index.js" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/drop.vue" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/select.css" />
+        <option value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/select.scss" />
       </list>
     </option>
   </component>
@@ -325,6 +268,9 @@
       </expand>
       <select />
     </treeState>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="222" />
@@ -425,8 +371,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -437,28 +383,37 @@
             <path>
               <item name="gstart" type="b2602c69:ProjectViewProjectNode" />
               <item name="gstart" type="462c0819:PsiDirectoryNode" />
-              <item name="gstart-common" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gstart" type="b2602c69:ProjectViewProjectNode" />
               <item name="gstart" type="462c0819:PsiDirectoryNode" />
-              <item name="gstart-common" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gstart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gstart" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gstart" type="b2602c69:ProjectViewProjectNode" />
               <item name="gstart" type="462c0819:PsiDirectoryNode" />
-              <item name="gstart-common" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gstart" type="b2602c69:ProjectViewProjectNode" />
               <item name="gstart" type="462c0819:PsiDirectoryNode" />
-              <item name="gstart-common" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="gstart-ui-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gstart" type="b2602c69:ProjectViewProjectNode" />
@@ -468,7 +423,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,32 +431,23 @@
     <property name="project.structure.proportion" value="0.15252855" />
     <property name="project.structure.side.proportion" value="0.2816092" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gstart-ui" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="JPA.DatabaseSchemaImportDialog" value="3bda4eff-5729-47c3-a136-58d3cfd85350" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table.vue" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\person\gstart\gstart-demo\gstart-demo-dao\src\main\resources" />
-      <recent name="E:\person\gstart\gstart-cms\gstart-cms-common\src\main" />
-      <recent name="E:\person\gstart\gstart-cms\gstart-cms-admin\src\main" />
-      <recent name="E:\person\gstart\gstart-demo\gstart-demo-web\src\main\webapp" />
-      <recent name="E:\person\gstart\gstart-demo\gstart-demo-rpc-service\src\main\assembly" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.gstart.common.util" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="com.gstart.demo.dao.pojo" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\person\gstart\gstart-ui\gstart-ui-common\img" />
@@ -509,6 +455,16 @@
       <recent name="F:\Study\gstart\gstart-ui\gstart-ui-common\js\public" />
       <recent name="E:\person\gstart\gstart-ui\gstart-ui-common" />
       <recent name="E:\person\gstart\gstart-ui\gstart-ui-common\js" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.gstart.demo.dao.pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\person\gstart\gstart-demo\gstart-demo-dao\src\main\resources" />
+      <recent name="E:\person\gstart\gstart-cms\gstart-cms-common\src\main" />
+      <recent name="E:\person\gstart\gstart-cms\gstart-cms-admin\src\main" />
+      <recent name="E:\person\gstart\gstart-demo\gstart-demo-web\src\main\webapp" />
+      <recent name="E:\person\gstart\gstart-demo\gstart-demo-rpc-service\src\main\assembly" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -523,7 +479,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Start">
+  <component name="RunManager" selected="Batch.dev">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -640,6 +596,15 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration name="dev" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="E:\person\gstart\gstart-ui\gstart-ui-common\bin" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="gstart" />
+      <option name="SCRIPT_NAME" value="dev.bat" />
+      <option name="PARAMETERS" value="" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -660,7 +625,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="test.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/gstart/gstart-ui/gstart-ui-common/js/test.html" />
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -776,18 +740,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.gstart" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+      <item index="1" class="java.lang.String" itemvalue="Batch.dev" />
       <item index="2" class="java.lang.String" itemvalue="Application.QRCodeUtil" />
       <item index="3" class="java.lang.String" itemvalue="Application.Start" />
       <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       <item index="5" class="java.lang.String" itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Start" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="3" class="java.lang.String" itemvalue="Application.QRCodeUtil" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Batch.dev" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Start" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="4" class="java.lang.String" itemvalue="Application.QRCodeUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -843,18 +808,154 @@
       <workItem from="1519376455685" duration="20111000" />
       <workItem from="1519429255070" duration="44800000" />
       <workItem from="1519477982487" duration="67000" />
-      <workItem from="1519741166687" duration="723000" />
+      <workItem from="1519741166687" duration="2197000" />
+      <workItem from="1519747554661" duration="87000" />
+      <workItem from="1519829559145" duration="575000" />
+      <workItem from="1519830182439" duration="14000" />
+      <workItem from="1519831056577" duration="765000" />
+      <workItem from="1519832702687" duration="959000" />
+      <workItem from="1519834720181" duration="433000" />
+      <workItem from="1519914348060" duration="40000" />
+      <workItem from="1519919541155" duration="84000" />
+      <workItem from="1520000213018" duration="934000" />
+      <workItem from="1520006484995" duration="86000" />
+      <workItem from="1520042296775" duration="495000" />
+      <workItem from="1521386740020" duration="84000" />
+      <workItem from="1521467087868" duration="1538000" />
+      <workItem from="1521471596648" duration="52000" />
+      <workItem from="1521557483636" duration="6000" />
+      <workItem from="1521639384913" duration="248000" />
     </task>
+    <task id="LOCAL-00001" summary="test idea update">
+      <created>1519743133018</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519743133018</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test idea update">
+      <created>1519743350136</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519743350136</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test idea update">
+      <created>1519743411599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519743411599</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test idea update">
+      <created>1519743853525</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1519743853525</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test idea update">
+      <created>1519743911860</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1519743911860</updated>
+    </task>
+    <task id="LOCAL-00006" summary="更新table斑马线&#10;更新table cell高度样式">
+      <created>1519747613224</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519747613224</updated>
+    </task>
+    <task id="LOCAL-00007" summary="更新table斑马线&#10;更新table cell高度样式">
+      <created>1519833231863</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1519833231863</updated>
+    </task>
+    <task id="LOCAL-00008" summary="更新table斑马线&#10;更新table cell高度样式">
+      <created>1519833283799</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519833283799</updated>
+    </task>
+    <task id="LOCAL-00009" summary="更新table&#10;更新单选框样式">
+      <created>1519834782487</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519834782487</updated>
+    </task>
+    <task id="LOCAL-00010" summary="更新table&#10;更新单选框样式">
+      <created>1519834983160</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1519834983160</updated>
+    </task>
+    <task id="LOCAL-00011" summary="更新单选框">
+      <created>1519835059254</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1519835059254</updated>
+    </task>
+    <task id="LOCAL-00012" summary="单选框测试">
+      <created>1519835121288</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1519835121288</updated>
+    </task>
+    <task id="LOCAL-00013" summary="更新radio样式&#10;添加radio-group">
+      <created>1519919609381</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1519919609381</updated>
+    </task>
+    <task id="LOCAL-00014" summary="更新check-box样式">
+      <created>1520006523192</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1520006523192</updated>
+    </task>
+    <task id="LOCAL-00015" summary="更新icon库&#10;更新下拉">
+      <created>1521386810594</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1521386810594</updated>
+    </task>
+    <task id="LOCAL-00016" summary="更新下拉">
+      <created>1521471626215</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1521471626215</updated>
+    </task>
+    <task id="LOCAL-00017" summary="更新下拉">
+      <created>1521639564631</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1521639564631</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223993000" />
+    <option name="totallyTimeSpent" value="231867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.50416666" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -871,8 +972,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4625132" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.49583334" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46194503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -895,8 +996,46 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test idea update" />
+    <MESSAGE value="更新table斑马线&#10;更新table cell高度样式" />
+    <MESSAGE value="更新table&#10;更新单选框样式" />
+    <MESSAGE value="更新单选框" />
+    <MESSAGE value="单选框测试" />
+    <MESSAGE value="更新radio样式&#10;添加radio-group" />
+    <MESSAGE value="更新check-box样式" />
+    <MESSAGE value="更新icon库&#10;更新下拉" />
+    <MESSAGE value="更新下拉" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新下拉" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -905,90 +1044,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/src/main/resources/applicationContext-demo-rpc-service.xml" />
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-dao/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-dao/src/main/java/com/gstart/demo/dao/daoimpl/DemoDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-service/target/classes/com/gstart/demo/service/impl/DemoServiceImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-dao/src/main/java/com/gstart/demo/dao/pojo/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/webapp/WEB-INF/jsp/test1.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-rpc-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/webapp/WEB-INF/jsp/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-common/src/main/java/com/gstart/common/base/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.5.3/dubbo-2.5.3.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gstart-common/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2100">
           <caret line="105" column="37" lean-forward="false" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,18 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/com/gstart/demo/web/controller/DemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <element signature="e#811#812#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,7 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,7 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,7 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-920">
           <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,7 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,7 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1226">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,7 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,7 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,7 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1360">
           <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1166,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="27" column="63" lean-forward="true" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2520">
           <caret line="157" column="43" lean-forward="false" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,7 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1190,7 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
           <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1198,7 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,7 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1214,7 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2840">
           <caret line="161" column="60" lean-forward="true" selection-start-line="161" selection-start-column="60" selection-end-line="161" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,7 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-220">
           <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1230,7 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="31" selection-end-column="114" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,7 +1258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="65" column="35" lean-forward="true" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1246,7 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1254,7 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1262,7 +1279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,7 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,7 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="91" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1294,6 +1307,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="72" lean-forward="false" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web/src/main/java/com/gstart/demo/web/controller/DemoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/radio/radio.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/components/test3.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table-body.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/table/table.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/example/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/select.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/components/select/drop.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="34" />
+          <folding>
+            <marker date="1521639575515" expanded="true" signature="793:820" ph="{&quot;name&quot;: &quot;gs-drop&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/index.css" />
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/css/select.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gstart-ui/gstart-ui-common/src/assets/sass/select.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding />
         </state>
       </provider>
