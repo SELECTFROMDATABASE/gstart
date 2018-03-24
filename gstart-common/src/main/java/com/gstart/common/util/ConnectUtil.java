@@ -1,5 +1,6 @@
 package com.gstart.common.util;
 
+import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -191,4 +192,7 @@ public class ConnectUtil {
 		return null;
 	}
 
+	public static JSONObject sendString(String url, String method, String outputStr, String connectUrlTypeHttp) {
+		return JSONObject.fromBean(sendString(url,method,outputStr,connectUrlTypeHttp,null));
+	}
 }
