@@ -123,7 +123,6 @@ public class SignUtil {
 	        } catch (NoSuchAlgorithmException e) {
 	            return null;
 	        } catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return null;
