@@ -5,23 +5,12 @@
         <Menu mode="horizontal" theme="dark">
           <div class="layout-logo">
           </div>
-          <div class="layout-nav">
-            <MenuItem name="1">
-              <Icon type="ios-navigate"></Icon>
-              Item 1
+          <div class="layout-nav" v-for="item in navItems">
+            <MenuItem :name="item.navName" >
+              <Icon :type="item.icon"></Icon>
+              {{item.text}}
             </MenuItem>
-            <MenuItem name="2">
-              <Icon type="ios-keypad"></Icon>
-              Item 2
-            </MenuItem>
-            <MenuItem name="3">
-              <Icon type="ios-analytics"></Icon>
-              Item 3
-            </MenuItem>
-            <MenuItem name="4">
-              <Icon type="ios-paper"></Icon>
-              Item 4
-            </MenuItem>
+
           </div>
         </Menu>
       </Header>
@@ -77,7 +66,13 @@
   export default {
     data () {
       return {
-        isCollapsed: true
+        isCollapsed: true,
+        navItems:[
+          {navName:'1',icon:'ios-navigate',text:"test1"},
+          {navName:'2',icon:'ios-keypad',text:"test2"},
+          {navName:'3',icon:'ios-analytics',text:"test3"},
+          {navName:'4',text:"test4"}
+        ]
       };
     },
     computed: {
