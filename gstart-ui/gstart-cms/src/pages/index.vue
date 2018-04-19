@@ -23,36 +23,10 @@
         <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
           <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
-              <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
-                <Submenu name="1">
-                  <template slot="title">
-                    <Icon type="ios-navigate"></Icon>
-                    Item 1
-                  </template>
-                  <MenuItem name="1-1">Option 1</MenuItem>
-                  <MenuItem name="1-2">Option 2</MenuItem>
-                  <MenuItem name="1-3">Option 3</MenuItem>
-                </Submenu>
-                <Submenu name="2">
-                  <template slot="title">
-                    <Icon type="ios-keypad"></Icon>
-                    Item 2
-                  </template>
-                  <MenuItem name="2-1">Option 1</MenuItem>
-                  <MenuItem name="2-2">Option 2</MenuItem>
-                </Submenu>
-                <Submenu name="3">
-                  <template slot="title">
-                    <Icon type="ios-analytics"></Icon>
-                    Item 3
-                  </template>
-                  <MenuItem name="3-1">Option 1</MenuItem>
-                  <MenuItem name="3-2">Option 2</MenuItem>
-                </Submenu>
-              </Menu>
+              <g-nav :items="meunItems"></g-nav>
             </Sider>
             <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-              Content
+              <Tree :data="data4" show-checkbox multiple></Tree>
             </Content>
           </Layout>
         </Content>
@@ -63,7 +37,10 @@
 </template>
 
 <script>
+  import GNav from "../components/g-nav";
   export default {
+    components: {GNav},
+
     data () {
       return {
         isCollapsed: true,
@@ -72,7 +49,81 @@
           {navName:'2',icon:'ios-keypad',text:"test2"},
           {navName:'3',icon:'ios-analytics',text:"test3"},
           {navName:'4',text:"test4"}
+        ],
+        meunItems : [
+          {
+            menuName : '系统设置',
+            menuNo : '01',
+            parentId : 0,
+            childrenItems : [
+              {menuName : '用户管理',
+                menuNo : '0101',
+                parentId : 1,
+                childrenItems:[
+                  {menuName : '用户管理1',
+                    menuNo : '010101',
+                    parentId : 1,
+                    url : 'fsr/sys/user/user.jsp'
+                  },
+                  {menuName : '用户管理2',
+                    menuNo : '010102',
+                    parentId : 1
+                  }
+                ]
+          },
+              {menuName : '部门定义',
+                menuNo : '0102',
+                parentId : 1},
+              {menuName : '岗位定义',
+                menuNo : '0103',
+                parentId : 1},
+              {menuName : '角色定义',
+                menuNo : '0104',
+                parentId : 1},
+            ]
+          },
+          {
+            menuName : '系统设置2',
+            menuNo : '02',
+            parentId : 0,
+          }
+        ],
+        data4: [
+          {
+            title: 'parent 1',
+            expand: true,
+            selected: true,
+            children: [
+              {
+                title: 'parent 1-1',
+                expand: true,
+                children: [
+                  {
+                    title: 'leaf 1-1-1',
+                    disabled: true
+                  },
+                  {
+                    title: 'leaf 1-1-2'
+                  }
+                ]
+              },
+              {
+                title: 'parent 1-2',
+                expand: true,
+                children: [
+                  {
+                    title: 'leaf 1-2-1',
+                    checked: true
+                  },
+                  {
+                    title: 'leaf 1-2-1'
+                  }
+                ]
+              }
+            ]
+          }
         ]
+
       };
     },
     computed: {

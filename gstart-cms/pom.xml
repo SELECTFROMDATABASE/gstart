@@ -9,12 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.gstart</groupId>
     <artifactId>gstart-cms</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>gstart-cms-admin</module>
         <module>gstart-cms-common</module>
     </modules>
+
+    <version>1.0.0</version>
 
 
 </project>
