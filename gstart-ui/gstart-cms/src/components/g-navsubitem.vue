@@ -14,7 +14,7 @@
 <script>
     export default {
         name: "g-navsubitem",
-        props:['items']
+        props:['items','show-checkbox']
     }
 </script>
 

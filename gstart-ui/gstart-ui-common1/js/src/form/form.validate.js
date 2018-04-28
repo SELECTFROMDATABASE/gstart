@@ -30,14 +30,16 @@ module.exports = {
     must : function (selector,prop) {
         if(helper.isArr(selector)){
             var flag = 0;
+            var emptyArrays = [];
             for(var i in selector){
-                if(this.isEmpty($(selector[i]))) flag = 1;
+                if(this.isEmpty($(selector[i]))){
+                    flag = 1;
+                    emptyArrays.push($(selector[i]));
+                }
             }
-            console.log(flag);
             if (flag == 1){
-                console.log(2222);
                 if(helper.isFunction(prop.fn)) {
-                    prop.fn.call();
+                    prop.fn(emptyArrays);
                     return false;
                 }
             }else{
@@ -46,7 +48,7 @@ module.exports = {
         }else{
             if(this.isEmpty(selector)){
                 if(helper.isFunction(prop.fn)) {
-                    prop.fn.call();
+                    prop.fn(selector);
                     return false;
                 }
                 else throw new Error("'fn' is not a function");

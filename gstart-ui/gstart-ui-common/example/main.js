@@ -20,7 +20,8 @@ const routes = [
   { path: '/04', component: Page04 },
   { path: '/05', component: Page05 },
   { path: '/06', component: Page06 },
-  { path: '/07', component: Page07 }
+  { path: '/07', component: Page07 },
+  { path: '/08', component: Page08 }
 ]
 //创建路由对象
 const router = new VueRouter({

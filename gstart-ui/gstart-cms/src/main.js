@@ -5,10 +5,11 @@ import App from './App'
 import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
-import axios from 'axios'
+import VueResource from 'vue-resource'
 Vue.config.productionTip = false
 Vue.use(iView)
-Vue.use(axios)
+Vue.use(VueResource)
+Vue.prototype.$jsoup = VueResource
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

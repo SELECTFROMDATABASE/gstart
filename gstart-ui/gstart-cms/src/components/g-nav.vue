@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Menu theme="light" width="auto" v-for="item in items" >
+    <Menu @on-select="menuSelected" theme="light" width="auto" v-for="item in items" >
       <Submenu :name="item.menuNo">
         <template slot="title">
           <Icon type="ios-navigate"></Icon>
@@ -17,7 +17,12 @@
     export default {
         name: "g-nav",
       components: {GNavsubitem},
-      props:["items"]
+      props:["items"],
+      methods:{
+        menuSelected :function(name){
+          console.log(name)
+        }
+      }
     }
 </script>
 

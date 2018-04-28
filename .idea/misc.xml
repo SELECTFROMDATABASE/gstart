@@ -4,6 +4,8 @@
     <file type="web" url="file://$PROJECT_DIR$/gstart-chat/gstart-wechat-mp/gstart-wechat-mp-admin" />
     <file type="web" url="file://$PROJECT_DIR$/gstart-common" />
     <file type="web" url="file://$PROJECT_DIR$/gstart-demo/gstart-demo-web" />
+    <file type="web" url="file://$PROJECT_DIR$/gstart-listener" />
+    <file type="web" url="file://$PROJECT_DIR$/gstart-version-control" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

@@ -1,7 +1,6 @@
 {
-  "name": "js",
+  "name": "gstart",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "start": "webpack"
   },
@@ -13,5 +12,10 @@
   },
   "dependencies": {
     "es3ify-loader": "^0.2.0"
-  }
+  },
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "description": ""
 }

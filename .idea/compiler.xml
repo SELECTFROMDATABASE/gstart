@@ -13,7 +13,9 @@
         <module name="gstart-demo-rpc-api" />
         <module name="gstart-demo-rpc-service" />
         <module name="gstart-demo-web" />
+        <module name="gstart-listener" />
         <module name="gstart-ui-common" />
+        <module name="gstart-version-control" />
         <module name="gstart-wechat-mp-admin" />
       </profile>
     </annotationProcessing>
@@ -22,12 +24,14 @@
       <module name="gstart-cms" target="1.8" />
       <module name="gstart-cms-admin" target="1.8" />
       <module name="gstart-cms-common" target="1.8" />
-      <module name="gstart-common" target="1.5" />
+      <module name="gstart-common" target="1.8" />
       <module name="gstart-demo" target="1.8" />
       <module name="gstart-demo-dao" target="1.8" />
       <module name="gstart-demo-rpc-api" target="1.8" />
       <module name="gstart-demo-rpc-service" target="1.8" />
       <module name="gstart-demo-web" target="1.8" />
+      <module name="gstart-listener" target="1.8" />
+      <module name="gstart-version-control" target="1.8" />
       <module name="gstart-wechat" target="1.8" />
       <module name="gstart-wechat-mp" target="1.8" />
       <module name="gstart-wechat-mp-admin" target="1.8" />

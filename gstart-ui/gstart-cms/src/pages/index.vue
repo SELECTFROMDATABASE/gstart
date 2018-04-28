@@ -10,23 +10,17 @@
               <Icon :type="item.icon"></Icon>
               {{item.text}}
             </MenuItem>
-
           </div>
         </Menu>
       </Header>
       <Layout :style="{padding: '0 50px'}">
-        <Breadcrumb :style="{margin: '16px 0'}">
-          <BreadcrumbItem>Home</BreadcrumbItem>
-          <BreadcrumbItem>Components</BreadcrumbItem>
-          <BreadcrumbItem>Layout</BreadcrumbItem>
-        </Breadcrumb>
         <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
           <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
               <g-nav :items="meunItems"></g-nav>
             </Sider>
-            <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-              <Tree :data="data4" show-checkbox multiple></Tree>
+            <Content :style="{paddingLeft:'20px',minHeight: '280px', background: '#fff'}">
+              <g-tabs :tabs="test"/>
             </Content>
           </Layout>
         </Content>
@@ -38,9 +32,22 @@
 
 <script>
   import GNav from "../components/g-nav";
+  import GTabs from "../components/g-tabs";
   export default {
-    components: {GNav},
+    components: {
+      GTabs,
+      GNav},
+    created(){
+    this.$http.get('http://localhost:9090/test/a').then((response) => {
+        // 响应成功回调
+      this.$data.meunItems = response.body;
+      }, (response) => {
+        // 响应错误回调
+      console.log(response)
+      });
 
+      console.log(this);
+    },
     data () {
       return {
         isCollapsed: true,
@@ -50,7 +57,9 @@
           {navName:'3',icon:'ios-analytics',text:"test3"},
           {navName:'4',text:"test4"}
         ],
-        meunItems : [
+        test : [{label:'1',content:'<Tree :data="data4" show-checkbox multiple></Tree>',id:1},{label:'2',content:'2',id:2},{label:'3',content:'2',id:3}],
+        meunItems : []/*,
+        meunItems : ""*//*[
           {
             menuName : '系统设置',
             menuNo : '01',
@@ -87,43 +96,45 @@
             menuNo : '02',
             parentId : 0,
           }
-        ],
+        ]*/,
         data4: [
           {
-            title: 'parent 1',
-            expand: true,
-            selected: true,
-            children: [
-              {
-                title: 'parent 1-1',
-                expand: true,
-                children: [
-                  {
-                    title: 'leaf 1-1-1',
-                    disabled: true
+            title : '系统设置',
+            menuNo : '01',
+            parentId : 0,
+            children : [
+              {title : '用户管理',
+                menuNo : '0101',
+                parentId : 1,
+                children:[
+                  {title : '用户管理1',
+                    menuNo : '010101',
+                    parentId : 1,
+                    url : 'fsr/sys/user/user.jsp'
                   },
-                  {
-                    title: 'leaf 1-1-2'
+                  {title : '用户管理2',
+                    menuNo : '010102',
+                    parentId : 1
                   }
                 ]
               },
-              {
-                title: 'parent 1-2',
-                expand: true,
-                children: [
-                  {
-                    title: 'leaf 1-2-1',
-                    checked: true
-                  },
-                  {
-                    title: 'leaf 1-2-1'
-                  }
-                ]
-              }
+              {title : '部门定义',
+                menuNo : '0102',
+                parentId : 1},
+              {title : '岗位定义',
+                menuNo : '0103',
+                parentId : 1},
+              {title : '角色定义',
+                menuNo : '0104',
+                parentId : 1},
             ]
+          },
+          {
+            title : '系统设置2',
+            menuNo : '02',
+            parentId : 0,
           }
         ]
-
       };
     },
     computed: {

@@ -1,6 +1,7 @@
 package com.gstart.common.util;
 
 
+import org.tmatesoft.svn.core.SVNDirEntry;
 import org.tmatesoft.svn.core.SVNException;
 import org.tmatesoft.svn.core.SVNURL;
 import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
@@ -27,4 +28,8 @@ public class SVNUtil {
         }
         return repository;
     }
+    public static SVNDirEntry getTag(){
+        return null;
+    }
+
 }

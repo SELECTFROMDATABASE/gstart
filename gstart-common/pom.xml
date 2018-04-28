@@ -21,6 +21,7 @@
         <logger.version>1.7.12</logger.version>
 
         <poi.version>3.15</poi.version>
+        <jackson.version>2.9.4</jackson.version>
         <json.version>0.9</json.version>
         <xstream.version>1.4.8</xstream.version>
         <jsoup.version>1.7.2</jsoup.version>
@@ -154,6 +155,17 @@
             <groupId>org.tmatesoft.svnkit</groupId>
             <artifactId>svnkit</artifactId>
             <version>1.8.5</version>
+        </dependency>
+        <!-- jackson  -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <!-- poi  excel-->
         <dependency>

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="gstart-demo-web:war">
-    <output-path>$PROJECT_DIR$/gstart-demo/gstart-demo-web/target</output-path>
-    <root id="archive" name="gstart-demo-web-1.0.0.war">
-      <element id="artifact" artifact-name="gstart-demo-web:war exploded" />
-    </root>
-  </artifact>
-</component>
