@@ -38,23 +38,23 @@ public class DemoController extends BaseController {/*
         n4.setMenuName("用户管理");
         n4.setMenuNo("0101");
         n4.setParentId("1");
-        n4.setUrl("gstart/sys/user/user.jsp");
+        n4.setUrl("gstart/sys/user/user");
 
         Menu n5 = new Menu();
         n5.setMenuName("部门定义");
         n5.setMenuNo("0102");
         n5.setParentId("1");
-        n5.setUrl("gstart/sys/user/user.jsp");
+        n5.setUrl("gstart/sys/department/department");
         Menu n6 = new Menu();
         n6.setMenuName("岗位定义");
         n6.setMenuNo("0103");
         n6.setParentId("1");
-        n6.setUrl("gstart/sys/user/user.jsp");
+        n6.setUrl("gstart/sys/position/position");
         Menu n7 = new Menu();
         n7.setMenuName("角色定义");
         n7.setMenuNo("0104");
         n7.setParentId("1");
-        n7.setUrl("gstart/sys/user/user.jsp");
+        n7.setUrl("gstart/sys/role/role");
         list3.add(n4);
         list3.add(n5);
         list3.add(n6);

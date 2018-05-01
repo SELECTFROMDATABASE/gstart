@@ -17,10 +17,19 @@
     export default {
         name: "g-nav",
       components: {GNavsubitem},
-      props:["items"],
+      props:["items","menuSelect"],
+      created(){
+
+      },
       methods:{
         menuSelected :function(name){
-          console.log(name)
+          try {
+            if (this.$props.menuSelect != undefined && (typeof this.$props.menuSelect) == "function"){
+              this.$props.menuSelect(name);
+            }
+          }catch (e) {
+            console.log(name);
+          }
         }
       }
     }

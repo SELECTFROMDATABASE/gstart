@@ -1,7 +1,7 @@
 <template>
     <div>
       <Tabs type="card" closable @on-tab-remove="handleTabRemove">
-        <TabPane :data-tabid="i.id" :label="i.label" v-for="i in tabs"><solt>{{i.content}}</solt></TabPane>
+        <TabPane :data-tabid="i.id" :label="i.label" v-for="i in tabs">{{i.content}}</TabPane>
         <Button type="ghost" size="small" slot="extra">增加</Button>
       </Tabs>
     </div>
