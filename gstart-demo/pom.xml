@@ -13,8 +13,8 @@
     <modules>
         <module>gstart-demo-rpc-api</module>
         <module>gstart-demo-rpc-service</module>
-        <module>gstart-demo-web</module>
         <module>gstart-demo-dao</module>
+        <module>gstart-demo-web</module>
     </modules>
 
 

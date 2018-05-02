@@ -2,12 +2,9 @@ package com.gstart.demo.web.controller;
 
 import com.gstart.common.base.BaseController;
 import com.gstart.demo.dao.pojo.Demo;
-import com.gstart.demo.dao.pojo.Menu;
-import com.gstart.demo.rpc.api.DemoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import com.gstart.demo.dao.pojo.User;
 import org.springframework.web.bind.annotation.*;
+import com.gstart.demo.dao.pojo.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +66,38 @@ public class DemoController extends BaseController {/*
         System.out.println(2);/*
         demoService.createDemo(demo);*/
         return demo;
+    }
+
+    @CrossOrigin(origins="*",maxAge=3600)
+    @RequestMapping(value = "/getUser" ,method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> getUser(){
+        List<User> list = new ArrayList<>();
+        User u1 = new User();
+        User u2 = new User();
+        User u3 = new User();
+        User u4 = new User();
+        u1.setAccount("123");
+        u2.setAccount("234");
+        u3.setAccount("345");
+        u4.setAccount("456");
+        u1.setId("1");
+        u2.setId("2");
+        u3.setId("3");
+        u4.setId("4");
+        u1.setName("test1");
+        u2.setName("test2");
+        u3.setName("test3");
+        u4.setName("test4");
+        u1.setStatus("1");
+        u2.setStatus("2");
+        u3.setStatus("2");
+        u4.setStatus("2");
+        list.add(u1);
+        list.add(u2);
+        list.add(u3);
+        list.add(u4);
+        return list;
     }
 
 }

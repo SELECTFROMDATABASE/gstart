@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-common</artifactId>
+            <artifactId>gstart-demo-dao</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

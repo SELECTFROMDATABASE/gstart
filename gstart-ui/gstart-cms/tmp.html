@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download | Chps</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+  <h2>Download CHPS</h2>
+  <p>CHPS Main Version :<select id="chps"></select></p>
+  <p>Search Version :<select id="search"></select> </p>
+  <p>CleanUp Version :<select id="clean"></select> </p>
+  <p>DataExtra Version :<select id="extra"></select> <button class="btn btn-default">Download</button></p>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  var map = {chps:["1.0","2.0"],search:["1.0"],clean:["1.0"],extra:["1.0"]};
+  for (var i in map){
+    console.log(i)
+    for(var ii in map[i]){
+      console.log(map[i][ii])
+      $("#"+i).append("<option value='"+map[i][ii]+"'>"+map[i][ii]+"</option>");
+    }
+  }
+</script>
