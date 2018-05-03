@@ -17,7 +17,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>5.0.3.RELEASE</spring.version>
         <hibernate.version>5.2.10.Final</hibernate.version>
-        <mybatis.version>3.4.2</mybatis.version>
         <dubbo.version>2.5.3</dubbo.version>
         <logger.version>1.7.12</logger.version>
 
@@ -61,14 +60,7 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-        <!-- mybatis -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>${mybatis.version}</version>
-        </dependency>
-
-        <!-- -->
+        <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

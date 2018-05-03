@@ -17,6 +17,7 @@ public class Menu {
     public String icon80;
     public String icon32;
     public String icon16;
+    public String iconClass;
     public String isAuth;
     public String target;
     public String remark;
@@ -25,6 +26,13 @@ public class Menu {
     public String isEnabled;
     public List<Menu> childrenItems;
 
+    public String getIconClass() {
+        return iconClass;
+    }
+
+    public void setIconClass(String iconClass) {
+        this.iconClass = iconClass;
+    }
     public List<Menu> getChildrenItems() {
         return childrenItems;
     }

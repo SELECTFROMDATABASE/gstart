@@ -13,13 +13,14 @@
           </div>
         </Menu>
       </Header>
-      <Layout :style="{padding: '0 50px'}">
-        <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
+      <Layout :style="{padding: '0 20px'}">
+        <Content :style="{padding: '24px 0', minHeight: '500px', background: '#fff'}">
           <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
               <g-nav :items="meunItems" :menu-select="menuSelect"></g-nav>
             </Sider>
             <Content :style="{paddingLeft:'20px',minHeight: '280px', background: '#fff'}">
+              <g-breadcrumbnav :current-path="currentPath"/>
               <router-view />
             </Content>
           </Layout>
@@ -33,6 +34,7 @@
 <script>
   import GNav from "../components/g-nav";
   import GTabs from "../components/g-tabs";
+  import GBreadcrumbnav from "../components/g-breadcrumbnav";
 
   function _forEach(item,fn) {
     if(item.childrenItems){
@@ -53,49 +55,57 @@
 
   export default {
     components: {
+      GBreadcrumbnav,
       GTabs,
       GNav},
-    beforeCreate(){
-      var that = this;
-      this.$http.get('http://localhost:8899/test/a').then((response) => {
-          // 响应成功回调
-        this.$data.meunItems = response.body;
-        this.$data.menuSelect = function(name){
-          //刷新页面
-          that.$router.push(name)
-        }
-        _forEach(response.body,function (item) {
-          if (!that.$router.options.routes[0].children){
-            that.$router.options.routes[0].children = [];
+    methods : {
+      initMenu () {
+        var that = this;
+        this.$http.get('http://localhost:8899/test/a').then((response) => {
+          //响应成功回调
+          this.$data.meunItems = response.body;
+          //菜单选中事件
+          this.$data.menuSelect = function(name){
+            //刷新页面
+            that.$router.push(name)
+            //刷新面包屑
           }
-          //动态添加路由
-          that.$router.options.routes[0].children.push({
-            //插入路由
-            name:item.menuNo,
-            path: item.menuNo,
-            //将组件用require引进来
-            component: resolve => require(['./'+item.url+'.vue'], resolve),
-            props : {
-              search : {}
+          //当前路由改变
+          that.$router.afterEach((to, from, next) => {
+            this.$data.currentPath = that.$router.currentRoute.matched
+          });
+          _forEach(response.body,function (item) {
+            if (!that.$router.options.routes[0].children){
+              that.$router.options.routes[0].children = [];
             }
-          })
-        });
-        that.$router.addRoutes(that.$router.options.routes);
+            //动态添加路由
+            that.$router.options.routes[0].children.push({
+              //插入路由
+              name:item.menuName,
+              path: item.menuNo,
+              //将组件用require引进来
+              component: resolve => require(['./'+item.url+'.vue'], resolve),
+              props : {
+                search : {}
+              }
+            })
+          });
+          that.$router.addRoutes(that.$router.options.routes);
         }, (response) => {
           // 响应错误回调
-        console.log(response)
         });
+      }
+    },
+    mounted(){
+      this.initMenu();
     },
     data () {
       return {
+        currentPath : [],
         isCollapsed: true,
         navItems:[
-          {navName:'1',icon:'ios-navigate',text:"test1"},
-          {navName:'2',icon:'ios-keypad',text:"test2"},
-          {navName:'3',icon:'ios-analytics',text:"test3"},
-          {navName:'4',text:"test4"}
+          {navName:'user',icon:'ios-navigate',text:"帐号"}
         ],
-        test : [{label:'1',content:'<Tree :data="data4" show-checkbox multiple></Tree>',id:1},{label:'2',content:'2',id:2},{label:'3',content:'2',id:3}],
         meunItems : [],
         columns : [],
         menuSelect : function (name) {
@@ -213,6 +223,7 @@
     margin: 0 auto;
     margin-right: 20px;
   }
+
   .layout-footer-center{
     text-align: center;
   }

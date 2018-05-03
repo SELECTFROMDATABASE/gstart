@@ -1,5 +1,6 @@
 <template>
     <div>
+
       <Table border ref="selectbar" :data="filters" :columns="tableColumnsFilters" stripe>
       </Table>
 
@@ -151,7 +152,6 @@
         },
         //重新加载数据
         load(search) {
-          console.log(search)
           //会执行一个load的事件
           this.$emit('load');
         },
@@ -172,7 +172,6 @@
           }else{
 
           }
-          console.log(this.$refs.selectbar)
           this.$refs.selectbar.selectAll(false)
         }
       }

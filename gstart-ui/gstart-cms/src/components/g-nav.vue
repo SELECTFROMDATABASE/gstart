@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <Menu @on-select="menuSelected" theme="light" width="auto" v-for="item in items" >
+  <div style="background: #ccc">
+    <Menu :mode="mode" :theme="theme" @on-select="menuSelected" width="auto" v-for="item in items" >
       <Submenu :name="item.menuNo">
         <template slot="title">
-          <Icon type="ios-navigate"></Icon>
+          <Icon :type="item.iconClass" v-if="item.iconClass != null"></Icon>
           {{item.menuName}}
         </template>
         <g-navsubitem :items="item.childrenItems"></g-navsubitem>
@@ -15,9 +15,20 @@
 <script>
     import GNavsubitem from "./g-navsubitem";
     export default {
-        name: "g-nav",
+      name: "g-nav",
       components: {GNavsubitem},
-      props:["items","menuSelect"],
+      props:{
+        items : Array,
+        menuSelect : Function,
+        mode : {
+          type : String,
+          default : "vertical"
+        },
+        theme : {
+          type : String,
+          default : "light"
+        }
+      },
       created(){
 
       },
@@ -28,7 +39,6 @@
               this.$props.menuSelect(name);
             }
           }catch (e) {
-            console.log(name);
           }
         }
       }

@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
+      name: '首页',
       component: index
     },
 

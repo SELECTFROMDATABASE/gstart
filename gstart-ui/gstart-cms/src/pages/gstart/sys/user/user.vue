@@ -1,12 +1,14 @@
 <template>
     <div>
+      <g-bar></g-bar>
       <g-table :columns="columns" :data="userData" :search="search" @load="loadData"/>
     </div>
 </template>
 
 <script>
 
-    import GTable from "../../../../components/g-table";
+  import GTable from "../../../../components/g-table";
+  import GBar from "../../../../components/g-bar";
     function formatStatus(value, status) {
       return status[value] || {value: '', name: ''};
     }
@@ -29,7 +31,9 @@
     };
 
     export default {
-      components: {GTable},
+      components: {
+        GBar,
+        GTable},
       name: "user",
       props: [
         //表格数据
@@ -84,6 +88,27 @@
                 props : {
                   value : 1
                 }
+              }
+            },{
+              title: '操作',
+              render: (h, params) => {
+                var ii = [];
+                var i =  h('Button', {
+                  slot: 'context',
+                  props: {
+                    type: "error"
+                  }
+                }, "删除");
+
+                var iii =  h('Button', {
+                  slot: 'context',
+                  props: {
+                    type: "primary"
+                  }
+                }, "修改");
+                ii[1]  = i;
+                ii[0]  = iii;
+                return ii;
               }
             }
           ],
