@@ -13,6 +13,7 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <mapping class="com.gstart.demo.dao.pojo.Demo"/>
+        <mapping class="com.gstart.demo.dao.pojo.Menu"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
