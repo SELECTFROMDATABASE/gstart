@@ -16,6 +16,7 @@
             <groupId>com.gstart</groupId>
             <artifactId>gstart-common</artifactId>
             <version>1.0.0</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 </project>

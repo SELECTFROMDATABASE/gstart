@@ -1,4 +1,4 @@
-package com.gstart.demo.service.impl;
+package com.gstart.demo.service;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

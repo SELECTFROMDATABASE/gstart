@@ -6,5 +6,4 @@ package com.gstart.common.base;
  * @Date 2018-01-31 13:44
  */
 public interface BaseService {
-    String sayHello();
 }

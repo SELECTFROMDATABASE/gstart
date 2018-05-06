@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class DemoDaoImpl implements DemoDao {
+public class DemoDaoImpl implements DemoDao<Demo> {
     public void saveDemo(Demo demo) {
         SessionFactory sf = new Configuration().configure().buildSessionFactory();
         Session session = sf.openSession();
@@ -17,12 +17,13 @@ public class DemoDaoImpl implements DemoDao {
         session.close();
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         DemoDao dao = new DemoDaoImpl();
+        com.gstart.demo.dao.pojo.Demo
         Demo demo = new Demo();
         demo.setMainId("aaa");
         demo.setName("测试");
         demo.setPassword("123");
         dao.saveDemo(demo);
-    }
+    }*/
 }

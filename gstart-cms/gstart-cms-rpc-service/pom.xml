@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>gstart-demo</artifactId>
+        <artifactId>gstart-cms</artifactId>
         <groupId>com.gstart</groupId>
         <version>1.0.0</version>
     </parent>
@@ -11,17 +11,18 @@
     <properties>
         <dubbo.version>2.5.3</dubbo.version>
     </properties>
-    <artifactId>gstart-demo-rpc-service</artifactId>
+    <artifactId>gstart-cms-rpc-service</artifactId>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-demo-dao</artifactId>
+            <artifactId>gstart-cms-dao</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-demo-rpc-api</artifactId>
+            <artifactId>gstart-cms-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
@@ -41,25 +42,5 @@
             <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
-    <!--<build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <descriptor>src/main/assembly/assembly.xml</descriptor>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>-->
 
 </project>

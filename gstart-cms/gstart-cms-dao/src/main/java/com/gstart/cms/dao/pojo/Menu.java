@@ -1,5 +1,10 @@
-package com.gstart.demo.dao.pojo;
+package com.gstart.cms.dao.pojo;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +12,11 @@ import java.util.List;
  * @Create by gzpykj
  * @Date 2018-04-19 22:50
  */
-public class Menu {
+@Entity
+@Table(name = "g_sys_menu")
+public class Menu implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public String mainId;
     public String parentId;
     public String menuNo;
@@ -24,6 +33,14 @@ public class Menu {
     public String orderId;
     public String hasChild;
     public String isEnabled;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "parentId",insertable = false,updatable = false)
+    private Menu parentMenu;
+
+    @OneToMany(targetEntity = Menu.class, cascade = { CascadeType.ALL }, mappedBy = "parentMenu")
+    @Fetch(FetchMode.JOIN)
+    @OrderBy("orderId desc")
     public List<Menu> childrenItems;
 
     public String getIconClass() {
@@ -33,6 +50,7 @@ public class Menu {
     public void setIconClass(String iconClass) {
         this.iconClass = iconClass;
     }
+
     public List<Menu> getChildrenItems() {
         return childrenItems;
     }

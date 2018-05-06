@@ -1,4 +1,4 @@
-package com.gstart.demo.dao.pojo;
+package com.gstart.cms.dao.pojo;
 
 /**
  * @author yangguangye

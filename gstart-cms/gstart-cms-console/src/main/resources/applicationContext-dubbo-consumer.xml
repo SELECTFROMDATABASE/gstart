@@ -7,12 +7,12 @@
                http://code.alibabatech.com/schema/dubbo
                http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
-    <dubbo:application name="gstart-demo" />
+    <dubbo:application name="gstart-cms" />
 
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <dubbo:registry address="zookeeper://localhost:2181" />
 
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="demoService1" interface="com.gstart.demo.rpc.api.MenuService" version="1.0" />
-    <bean id="demoService" class="com.gstart.demo.rpc.api.MenuService" parent="demoService1" abstract="true"/>
+    <dubbo:reference id="menuService1" interface="com.gstart.cms.rpc.api.MenuService" version="1.0" />
+    <bean id="menuService" class="com.gstart.cms.rpc.api.MenuService" parent="menuService1" abstract="true"/>
 </beans>

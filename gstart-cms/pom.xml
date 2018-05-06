@@ -13,9 +13,11 @@
     <artifactId>gstart-cms</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>gstart-cms-admin</module>
         <module>gstart-cms-common</module>
         <module>gstart-cms-dao</module>
+        <module>gstart-cms-console</module>
+        <module>gstart-cms-rpc-api</module>
+        <module>gstart-cms-rpc-service</module>
     </modules>
 
     <version>1.0.0</version>

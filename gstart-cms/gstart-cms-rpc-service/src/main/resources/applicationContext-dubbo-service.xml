@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="gstart-demo" />
+    <dubbo:application name="gstart-cms" />
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://localhost:2181" />
@@ -14,8 +14,8 @@
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20881" serialization="java"/>
 
-    <dubbo:service interface="com.gstart.demo.rpc.api.MenuService" ref="menuService" timeout="5000" retries="0" version="1.0"/>
-    <bean id="menuDao" class="com.gstart.demo.dao.daoimpl.MenuDaoImpl"/>
-    <bean class="com.gstart.demo.dao.dao.MenuDao" abstract="true" parent="menuDao"/>
-    <bean id="menuService" class="com.gstart.demo.service.MenuServiceImpl"/>
+    <dubbo:service interface="com.gstart.cms.rpc.api.MenuService" ref="menuService" timeout="5000" retries="0" version="1.0"/>
+    <bean id="menuDao" class="com.gstart.cms.dao.impl.MenuDaoImpl"/>
+    <bean class="com.gstart.cms.dao.dao.MenuDao" abstract="true" parent="menuDao"/>
+    <bean id="menuService" class="com.gstart.cms.rpc.service.MenuServiceImpl"/>
 </beans>

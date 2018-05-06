@@ -11,7 +11,7 @@
       <init-param>
           <!-- mvc配置文件的位置和名称 -->
           <param-name>contextConfigLocation</param-name>
-           <param-value>classpath*:applicationContext-dubbo-consumer.xml;classpath*:application-servlet.xml;classpath:springMVC-servlet.xml;</param-value>
+           <param-value>classpath*:applicationContext.xml;classpath*:applicationContext-dubbo-consumer.xml;classpath*:application-servlet.xml;classpath:springMVC-servlet.xml;</param-value>
       </init-param>
      <load-on-startup>1</load-on-startup>
    </servlet>

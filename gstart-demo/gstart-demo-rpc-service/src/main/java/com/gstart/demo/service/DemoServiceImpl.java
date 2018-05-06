@@ -1,4 +1,4 @@
-package com.gstart.demo.service.impl;
+package com.gstart.demo.service;
 
 import com.gstart.demo.dao.dao.DemoDao;
 import com.gstart.demo.dao.pojo.Demo;
@@ -14,7 +14,7 @@ public class DemoServiceImpl implements DemoService{
     }
 
     @Override
-    public void createDemo(Demo demo) {
-        demoDao.saveDemo(demo);
+    public void createDemo(Demo demo) {/*
+        demoDao.saveDemo(demo);*/
     }
 }
