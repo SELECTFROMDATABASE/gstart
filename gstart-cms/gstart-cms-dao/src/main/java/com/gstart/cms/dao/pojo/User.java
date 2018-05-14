@@ -1,12 +1,18 @@
 package com.gstart.cms.dao.pojo;
 
+import javax.persistence.*;
+
 /**
  * @author yangguangye
  * @Create by gzpykj
  * @Date 2018-05-02 16:06
  */
+@Entity
+@Table(name = "g_sys_user")
 public class User {
-    private String id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private String mainId;
     private String name;
     private String account;
     private String email;
@@ -15,12 +21,12 @@ public class User {
     private String password;
     private String status;
 
-    public String getId() {
-        return id;
+    public String getMainId() {
+        return mainId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMainId(String mainId) {
+        this.mainId = mainId;
     }
 
     public String getAccount() {
