@@ -5,7 +5,7 @@
     <Layout style="height: 100%;">
       <Header style="height: 10%;">
         <div>
-          <h1>XXXXXXXXXXXXXXXX</h1>
+          <h1>广东烧腊协会委员会</h1>
         </div>
       </Header>
       <Content style="height: 80%">
@@ -71,10 +71,9 @@
     },
     methods: {
       handleSubmit () {
-        /*
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
-            Cookies.set('user', this.form.userName);
+           /* Cookies.set('user', this.form.userName);
             Cookies.set('password', this.form.password);
             this.$store.commit('setAvator', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg');
             if (this.form.userName === 'iview_admin') {
@@ -84,10 +83,14 @@
             }
             this.$router.push({
               name: 'home_index'
-            });
+            });*/
+            this.$http.post("http://localhost:8889/manage/user/login", {credentials: true,account:"1234",password:"12345"}).then( res => {
+                console.log(this.getCookie)
+            },(err)=>{
+              console.log(err)
+            })
           }
-        });*/
-        console.log(1)
+        });
       }
     }
   };

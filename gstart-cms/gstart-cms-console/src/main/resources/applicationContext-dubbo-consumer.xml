@@ -15,4 +15,6 @@
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
     <dubbo:reference id="menuService1" interface="com.gstart.cms.rpc.api.MenuService" version="1.0" />
     <bean id="menuService" class="com.gstart.cms.rpc.api.MenuService" parent="menuService1" abstract="true"/>
+    <dubbo:reference id="userService1" interface="com.gstart.cms.rpc.api.UserService" version="1.0" />
+    <bean id="userService" class="com.gstart.cms.rpc.api.UserService" parent="userService1" abstract="true"/>
 </beans>

@@ -14,8 +14,11 @@ public class User {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private String mainId;
     private String name;
+
+    @Column(name = "userName")
     private String account;
     private String email;
+    @Column(name = "mobile")
     private String phone;
     private String type;
     private String password;
@@ -83,5 +86,19 @@ public class User {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "mainId='" + mainId + '\'' +
+                ", name='" + name + '\'' +
+                ", account='" + account + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", type='" + type + '\'' +
+                ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

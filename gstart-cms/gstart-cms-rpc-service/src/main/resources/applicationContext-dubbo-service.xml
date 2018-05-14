@@ -18,4 +18,9 @@
     <bean id="menuDao" class="com.gstart.cms.dao.impl.MenuDaoImpl"/>
     <bean class="com.gstart.cms.dao.dao.MenuDao" abstract="true" parent="menuDao"/>
     <bean id="menuService" class="com.gstart.cms.rpc.service.MenuServiceImpl"/>
+
+    <dubbo:service interface="com.gstart.cms.rpc.api.UserService" ref="userService" timeout="5000" retries="0" version="1.0"/>
+    <bean id="userDao" class="com.gstart.cms.dao.impl.UserDaoImpl"/>
+    <bean class="com.gstart.cms.dao.dao.UserDao" abstract="true" parent="userDao"/>
+    <bean id="userService" class="com.gstart.cms.rpc.service.UserServiceImpl"/>
 </beans>

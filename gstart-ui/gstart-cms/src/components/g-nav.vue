@@ -29,7 +29,7 @@
           default : "light"
         }
       },
-      created(){
+      mounted(){
 
       },
       methods:{

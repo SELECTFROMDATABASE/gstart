@@ -37,7 +37,8 @@
   import GBreadcrumbnav from "../components/g-breadcrumbnav";
 
   function _forEach(item,fn) {
-    if(item.childrenItems){
+    if(item.childrenItems && item.childrenItems.length != 0){
+      console.log(1)
       _forEach(item.childrenItems,fn);
     }else{
       if(item.url){
@@ -74,7 +75,7 @@
           that.$router.afterEach((to, from, next) => {
             this.$data.currentPath = that.$router.currentRoute.matched
           });
-          _forEach(response.body,function (item) {
+          _forEach(this.$data.meunItems,function (item) {
             if (!that.$router.options.routes[0].children){
               that.$router.options.routes[0].children = [];
             }
