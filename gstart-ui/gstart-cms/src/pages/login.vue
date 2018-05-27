@@ -5,7 +5,7 @@
     <Layout style="height: 100%;">
       <Header style="height: 10%;">
         <div>
-          <h1>广东烧腊协会委员会</h1>
+          <h1>XXXXXXXXXXXXXXXXXXXXXXXXXXX</h1>
         </div>
       </Header>
       <Content style="height: 80%">
@@ -51,6 +51,8 @@
 
 <script>
   import Cookies from 'js-cookie';
+  import host from '../api/host';
+  import axios from 'axios';
   export default {
     name: 'login',
     data () {
@@ -71,24 +73,44 @@
     },
     methods: {
       handleSubmit () {
+        const loading = this.$Message.loading({
+          content: '登录中...',
+          duration: 0
+        });
+        const removeLoading = function () {
+          setTimeout(loading,1)
+        }
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
-           /* Cookies.set('user', this.form.userName);
-            Cookies.set('password', this.form.password);
-            this.$store.commit('setAvator', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg');
-            if (this.form.userName === 'iview_admin') {
-              Cookies.set('access', 0);
-            } else {
-              Cookies.set('access', 1);
-            }
-            this.$router.push({
-              name: 'home_index'
-            });*/
-            this.$http.post("http://localhost:8889/manage/user/login", {credentials: true,account:"1234",password:"12345"}).then( res => {
-                console.log(this.getCookie)
-            },(err)=>{
-              console.log(err)
+           const  that = this;
+            axios.defaults.withCredentials=true
+            axios({
+              method: 'post',
+              url: host.prefix()+"/sso/login",
+              data: {
+                account:this.$refs.loginForm.model.userName,
+                password:this.$refs.loginForm.model.password},
+              headers :{
+                'Access-Control-Allow-Origin':'http://localhost:9999',
+                'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+                'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+                'Access-Control-Allow-Credentials':'true'
+              }
+            }).then(function (res) {
+              removeLoading();
+              if (res.data.success){
+                that.$Message.success({content:res.data.message,duration:3,onClose:function () {
+                  console.log(1)
+                  that.$router.push("/home")
+                  }});
+              }else {
+                that.$Message.error(res.data.message);
+              }
             })
+              .catch(function (error) {
+                that.$Message.error(error);
+              });
+
           }
         });
       }
