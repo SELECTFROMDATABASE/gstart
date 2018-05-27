@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>gstart</artifactId>
+        <groupId>com.gstart</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.gstart</groupId>
+    <artifactId>gstart-upms</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>gstart-upms-common</module>
+        <module>gstart-upms-server</module>
+        <module>gstart-upms-dao</module>
+        <module>gstart-upms-rpc-api</module>
+        <module>gstart-upms-rpc-service</module>
+        <module>gstart-upms-client</module>
+    </modules>
+
+</project>

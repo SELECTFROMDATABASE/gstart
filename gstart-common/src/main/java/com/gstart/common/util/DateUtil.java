@@ -1,8 +1,15 @@
 package com.gstart.common.util;
 
+import javax.management.StringValueExp;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import static jdk.nashorn.internal.objects.Global.undefined;
+import static jdk.nashorn.internal.runtime.Scope.getScopeCount;
+
 /**
  * 
  * 
@@ -16,6 +23,8 @@ public class DateUtil {
 	public static String FORMAT_Y_M_D_H_M_S = "yyyy-MM-dd HH:mm:ss";
 	public static String FORMAT_Y_M_D = "yyyy-MM-dd";
 	public static String FORMAT_H_M_S = "HH:mm:ss";
+	public static String DATE_TYPE_SIMPLE = "single";
+	public static String DATE_TYPE_COMPLEX = "complex";
 	/**
 	 * 判断类
 	 * @author Jerry
@@ -217,4 +226,79 @@ public class DateUtil {
 		c.setTimeInMillis(time);
 		return c;
 	}
+
+	/**
+	 * 时间差转毫秒
+	 */
+	public static Double transMills(String time,String unit){
+		switch (unit){
+			case "yyyy" :{
+				Double year = Math.floor(Float.valueOf(time)) * 365 * 24 * 60 * 60 ;
+				return year;
+			}
+			case "MM" :{
+				Double month = Math.floor(Float.valueOf(time)) * 30 * 24 * 60 * 60 ;
+				return month ;
+			}
+			case "dd" :{
+				Double day = Math.floor(Float.valueOf(time)) * 24 * 60 * 60 ;
+				return day ;
+			}
+			case "HH" :{
+				Double hour = Math.floor(Float.valueOf(time)) * 60 * 60 ;
+				return hour ;
+			}
+			case "mm" :{
+				Double mm = Math.floor(Float.valueOf(time)) * 60 ;
+				return mm ;
+			}
+			case "ss" :{
+				Double ss = Math.floor(Float.valueOf(time) );
+				return ss;
+			}
+		}
+		return 0.0;
+	}
+
+	/**
+	 * 转换时间单位
+	 */
+	public static String transUnit(Double mills,String type,String format) throws Exception {
+		//多个单位
+		Double years = Math.floor(mills / 1000 / 60 / 60 / 24 / 30 / 12) ;
+		Double month = Math.floor(mills / 1000 / 60 / 60 / 24 / 30) - years * 12;
+		Double days = Math.floor(mills / 1000 / 60 / 60 / 24) - years * 12 * 30 - month * 30;
+		Double hours = Math.floor(mills / 1000 / 60 / 60) - years * 12 * 30 *24 - month * 30 * 24 - days * 24;
+		Double minute = Math.floor(mills / 1000 / 60) - years * 12 * 30 * 24 * 60 - month * 30 * 24 * 60 - days * 24 * 60 - hours * 60;
+		Double second = Math.floor(mills / 1000 ) - years * 12 * 30 * 24 * 60 * 60 - month * 30 * 24 * 60 * 60 - days * 24 * 60 * 60 - hours * 60 * 60 - minute * 60;
+		if(format == null || format == ""){
+			throw new Exception("Unexcept format Type");
+		}
+		String dateString = "";
+		//用一个单位
+		if (type == "single" ) {
+			dateString = format == null ? "": format;
+			if (format != null) {
+				if (format.indexOf("yyyy") >= 0) return dateString.replace("yyyy", String.valueOf(years));
+				if (format.indexOf("MM") >= 0) return dateString.replace("MM", String.valueOf(month + years * 12));
+				if (format.indexOf("dd") >= 0) return dateString.replace("dd", String.valueOf(years * 12 * 30 + month * 30 + days));
+				if (format.indexOf("HH") >= 0) return dateString.replace("HH", String.valueOf(years * 12 * 30 *24 + month * 30 * 24 + days * 24 + hours));
+				if (format.indexOf("mm") >= 0) return dateString.replace("mm", String.valueOf(years * 12 * 30 *24 * 60 + month * 30 * 24 * 60 + days * 24 * 60 + hours * 60 + minute));
+				if (format.indexOf("ss") >= 0) return dateString.replace("ss", String.valueOf(years * 12 * 30 * 24 * 60 * 60 + month * 30 * 24 * 60 * 60 + days * 24 * 60 * 60 + hours * 60 * 60 + minute * 60 + second));
+			}
+		}else if (type == "complex") {
+			//用多个单位
+			dateString = format == null ? "": format;
+			if (format != null) {
+				if (format.indexOf("yyyy") >= 0) dateString = dateString.replace("yyyy", String.valueOf(years));
+				if (format.indexOf("MM") >= 0) dateString = dateString.replace("MM", String.valueOf(month));
+				if (format.indexOf("dd") >= 0) dateString = dateString.replace("dd", String.valueOf(days));
+				if (format.indexOf("HH") >= 0) dateString = dateString.replace("HH", String.valueOf(hours));
+				if (format.indexOf("mm") >= 0) dateString = dateString.replace("mm", String.valueOf(minute));
+				if (format.indexOf("ss") >= 0) dateString = dateString.replace("ss", String.valueOf(second));
+			}
+		}
+		return dateString;
+	}
+
 }

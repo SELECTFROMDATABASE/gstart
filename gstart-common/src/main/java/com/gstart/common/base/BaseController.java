@@ -15,6 +15,7 @@ public abstract class BaseController {
     @ExceptionHandler
     public String exceptionHandle(Exception exception){
         logger.error(this.getClass().getName() + " error：" + exception.getMessage());
+        exception.printStackTrace();
         return "/error.jsp";
     }
 }
