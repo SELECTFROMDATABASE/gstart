@@ -35,10 +35,11 @@
   import GNav from "../components/g-nav";
   import GTabs from "../components/g-tabs";
   import GBreadcrumbnav from "../components/g-breadcrumbnav";
+  import host from '../api/host';
+  import axios from 'axios';
 
   function _forEach(item,fn) {
     if(item.childrenItems && item.childrenItems.length != 0){
-      console.log(1)
       _forEach(item.childrenItems,fn);
     }else{
       if(item.url){
@@ -62,39 +63,48 @@
     methods : {
       initMenu () {
         var that = this;
-        this.$http.get('http://localhost:8899/test/a').then((response) => {
-          //响应成功回调
-          this.$data.meunItems = response.body;
-          //菜单选中事件
-          this.$data.menuSelect = function(name){
-            //刷新页面
-            that.$router.push(name)
-            //刷新面包屑
+
+        axios({
+          method: 'get',
+          url: host.manage() + '/manage/menu',
+          headers :{
+            'Access-Control-Allow-Origin':'http://localhost:8080',
+            'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+            'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+            'Access-Control-Allow-Credentials':'true'
           }
-          //当前路由改变
-          that.$router.afterEach((to, from, next) => {
-            this.$data.currentPath = that.$router.currentRoute.matched
-          });
-          _forEach(this.$data.meunItems,function (item) {
-            if (!that.$router.options.routes[0].children){
-              that.$router.options.routes[0].children = [];
+        }).then(function(response) {
+            //响应成功回调
+            that.$data.meunItems = response.data;
+            //菜单选中事件
+            that.$data.menuSelect = function(name){
+              //刷新页面
+              that.$router.push(name)
+              //刷新面包屑
             }
-            //动态添加路由
-            that.$router.options.routes[0].children.push({
-              //插入路由
-              name:item.menuName,
-              path: item.menuNo,
-              //将组件用require引进来
-              component: resolve => require(['./'+item.url+'.vue'], resolve),
-              props : {
-                search : {}
+            //当前路由改变
+            that.$router.afterEach((to, from, next) => {
+              that.$data.currentPath = that.$router.currentRoute.matched
+            });
+            _forEach(that.$data.meunItems,function (item) {
+              if (!that.$router.options.routes[0].children){
+                that.$router.options.routes[0].children = [];
               }
-            })
+              //动态添加路由
+              that.$router.options.routes[0].children.push({
+                //插入路由
+                name:item.menuName,
+                path: item.menuNo,
+                //将组件用require引进来
+                component: resolve => require(['./'+item.url+'.vue'], resolve),
+                props : {
+                  search : {}
+                }
+              })
+            });
+            that.$router.addRoutes(that.$router.options.routes);
+
           });
-          that.$router.addRoutes(that.$router.options.routes);
-        }, (response) => {
-          // 响应错误回调
-        });
       }
     },
     mounted(){

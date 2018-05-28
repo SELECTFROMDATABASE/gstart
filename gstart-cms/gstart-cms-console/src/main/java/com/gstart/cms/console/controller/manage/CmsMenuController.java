@@ -15,12 +15,13 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping(value = "/manage/menu")
+@RequestMapping(value = "/manage")
 public class CmsMenuController extends BaseController {
 
     @Autowired
     private MenuService menuService;
-    @CrossOrigin(origins = "*", maxAge = 3600)
+
+    @CrossOrigin(origins = {"http://localhost:8080"}, maxAge = 3600,allowCredentials = "true")
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     @ResponseBody
     public List<Menu> getMainMenu() {

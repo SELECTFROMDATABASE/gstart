@@ -15,7 +15,7 @@ import javax.enterprise.inject.Model;
  */
 
 @RestController
-@RequestMapping(value = "/manage/user")
+@RequestMapping(value = "/manage")
 public class CmsUserController extends BaseController {
 
     @Autowired

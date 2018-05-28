@@ -86,12 +86,12 @@
             axios.defaults.withCredentials=true
             axios({
               method: 'post',
-              url: host.prefix()+"/sso/login",
+              url: host.login()+"/sso/login",
               data: {
                 account:this.$refs.loginForm.model.userName,
                 password:this.$refs.loginForm.model.password},
               headers :{
-                'Access-Control-Allow-Origin':'http://localhost:9999',
+                'Access-Control-Allow-Origin':'http://localhost:8080',
                 'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
                 'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
                 'Access-Control-Allow-Credentials':'true'
