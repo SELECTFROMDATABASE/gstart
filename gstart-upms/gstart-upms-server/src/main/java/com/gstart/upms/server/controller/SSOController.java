@@ -1,31 +1,35 @@
 package com.gstart.upms.server.controller;
 
+import com.baidu.unbiz.fluentvalidator.DefaultValidateCallback;
+import com.baidu.unbiz.fluentvalidator.FluentValidator;
+import com.baidu.unbiz.fluentvalidator.ValidationError;
+import com.baidu.unbiz.fluentvalidator.Validator;
+import com.baidu.unbiz.fluentvalidator.validator.element.ValidatorElementList;
 import com.gstart.common.base.BaseController;
 import com.gstart.common.bean.Message;
-import com.gstart.upms.client.shiro.session.UpmsSessionDao;
-import net.bytebuddy.asm.Advice;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.*;
-import org.apache.shiro.config.IniSecurityManagerFactory;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-import org.apache.shiro.util.Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author yangguangye
  * @Create by gzpykj
  * @Date 2018-05-19 10:28
  */
-@CrossOrigin(origins = {"http://localhost:9999"},allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8080"},allowCredentials = "true")
 @RestController
 @RequestMapping(value = "/sso")
 public class SSOController extends BaseController {
-
 
     @Autowired
     HttpServletRequest request;

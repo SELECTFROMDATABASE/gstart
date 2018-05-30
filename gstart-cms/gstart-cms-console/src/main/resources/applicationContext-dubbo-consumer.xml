@@ -17,4 +17,7 @@
     <bean id="menuService" class="com.gstart.cms.rpc.api.MenuService" parent="menuService1" abstract="true"/>
     <dubbo:reference id="userService1" interface="com.gstart.cms.rpc.api.UserService" version="1.0" />
     <bean id="userService" class="com.gstart.cms.rpc.api.UserService" parent="userService1" abstract="true"/>
+
+    <dubbo:reference id="upmsApiService" interface="com.gstart.upms.rpc.api.UpmsApiService" version="1.0" mock="true"/>
+
 </beans>
