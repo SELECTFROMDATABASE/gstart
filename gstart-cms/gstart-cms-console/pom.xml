@@ -23,6 +23,11 @@
             <artifactId>gstart-cms-dao</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.gstart</groupId>
+            <artifactId>gstart-upms-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>

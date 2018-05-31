@@ -76,13 +76,16 @@ public class RedisFactory {
 
     public static void set(String key, String value, int maxTime) {
         voidJedis.accept((o) -> {
-            LOGGER.info(" Redis set '{}' , '{}' ", key, value);
-            o.setex(key, maxTime, value);
+            LOGGER.info(" Redis set key : '{}' , maxtime : '{}', value : '{}' ", key,maxTime, value);
+            o.set(key, value);
+            o.expire(key,maxTime);
         });
     }
 
     public static String get(String key) {
-        return String.valueOf(returnJedis.apply((s) -> s.get(key)));
+        LOGGER.info(" Redis get '{}' ", key);
+        Object values = returnJedis.apply((s) -> s.get(key));
+        return values == null? null : String.valueOf(values);
     }
 
     public static void del(String key) {
@@ -120,8 +123,14 @@ public class RedisFactory {
         });
     }
 
+    public static void lpush(String key ,String ... objects){
+        voidJedis.accept(jedis -> {
+            LOGGER.info(" Redis lpush '{}','{}' ",key,objects);
+            jedis.lpush(key,objects);
+        });
+    }
+
     public static void main(String[] args) {
-        set("gstart-upms-shiro-session-id_3f40853b-3d83-425f-a1d4-cc626e2705af", "123");
-        System.out.println(get("gstart-upms-shiro-session-id_3f40853b-3d83-425f-a1d4-cc626e2705af"));
+        set("gstart-upms-shiro-session-id_3f40853b-3d83-425f-a1d4-cc626e2705af", "123",5);
     }
 }
