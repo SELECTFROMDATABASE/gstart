@@ -82,7 +82,9 @@ public class RedisFactory {
     }
 
     public static String get(String key) {
-        return String.valueOf(returnJedis.apply((s) -> s.get(key)));
+        LOGGER.info(" Redis get '{}' ", key);
+        Object values = returnJedis.apply((s) -> s.get(key));
+        return values == null? null : String.valueOf(values);
     }
 
     public static void del(String key) {
@@ -117,6 +119,13 @@ public class RedisFactory {
         voidJedis.accept(jedis -> {
             LOGGER.info(" Redis lrem '{}','{}','{}' ", key,count,value);
             jedis.lrem(key, count, value);
+        });
+    }
+
+    public static void lpush(String key ,String ... objects){
+        voidJedis.accept(jedis -> {
+            LOGGER.info(" Redis lpush '{}','{}' ",key,objects);
+            jedis.lpush(key,objects);
         });
     }
 

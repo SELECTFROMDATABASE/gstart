@@ -272,6 +272,14 @@
             <artifactId>shiro-spring</artifactId>
             <version>${shiro.version}</version>
         </dependency>
+
+        <!--  -->
+        <dependency>
+            <groupId>com.baidu.unbiz</groupId>
+            <artifactId>fluent-validator</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
     </dependencies>
     <!-- 发布设置
     <distributionManagement>
