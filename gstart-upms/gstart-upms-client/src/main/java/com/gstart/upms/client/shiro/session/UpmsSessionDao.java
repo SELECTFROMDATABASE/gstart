@@ -48,7 +48,7 @@ public class UpmsSessionDao extends CachingSessionDAO {
             upmsSession.setStatus(cacheUpmsSession.getStatus());
             upmsSession.setAttribute("FORCE_LOGOUT", cacheUpmsSession.getAttribute("FORCE_LOGOUT"));
         }
-        RedisFactory.set(GSTART_UPMS_SHIRO_SESSION_ID + "_" + session.getId(), SerializableUtil.serialize(session));
+        RedisFactory.set(GSTART_UPMS_SHIRO_SESSION_ID + "_" + session.getId(), SerializableUtil.serialize(session),(int) session.getTimeout() / 1000);
         // 更新GSTART_UPMS_SERVER_SESSION_ID、GSTART_UPMS_SERVER_CODE过期时间 TODO
         LOGGER.info("doUpdate >>>>> sessionId={}", session.getId());
     }
@@ -92,7 +92,7 @@ public class UpmsSessionDao extends CachingSessionDAO {
         System.out.println(this.getClass() +" ----------------- doCreate");
         Serializable sessionId = generateSessionId(session);
         assignSessionId(session, sessionId);
-        RedisFactory.set(GSTART_UPMS_SHIRO_SESSION_ID + "_" + sessionId, SerializableUtil.serialize(session) );
+        RedisFactory.set(GSTART_UPMS_SHIRO_SESSION_ID + "_" + sessionId, SerializableUtil.serialize(session),(int) session.getTimeout() / 1000);
         LOGGER.info("doCreate >>>>> sessionId={}", sessionId);
         return sessionId;
     }

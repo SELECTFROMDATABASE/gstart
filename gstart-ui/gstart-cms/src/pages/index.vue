@@ -64,15 +64,9 @@
       initMenu () {
         var that = this;
 
-        axios({
+        this.$ajax({
           method: 'get',
-          url: host.manage() + '/manage/menu',
-          headers :{
-            'Access-Control-Allow-Origin':'http://localhost:8080',
-            'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-            'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-            'Access-Control-Allow-Credentials':'true'
-          }
+          url: host.manage() + '/manage/menu'
         }).then(function(response) {
             //响应成功回调
             that.$data.meunItems = response.data;

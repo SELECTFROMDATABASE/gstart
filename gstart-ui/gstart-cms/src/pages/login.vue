@@ -52,7 +52,6 @@
 <script>
   import Cookies from 'js-cookie';
   import host from '../api/host';
-  import axios from 'axios';
   export default {
     name: 'login',
     data () {
@@ -83,24 +82,18 @@
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
            const  that = this;
-            axios.defaults.withCredentials=true
-            axios({
-              method: 'post',
-              url: host.login()+"/sso/login",
-              data: {
-                account:this.$refs.loginForm.model.userName,
-                password:this.$refs.loginForm.model.password},
-              headers :{
-                'Access-Control-Allow-Origin':'http://localhost:8080',
-                'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-                'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-                'Access-Control-Allow-Credentials':'true'
-              }
-            }).then(function (res) {
+           this.$ajax({
+             method: 'post',
+             url: host.login()+"/sso/login",
+             data: {
+               account:this.$refs.loginForm.model.userName,
+               password:this.$refs.loginForm.model.password}
+           })
+            .then(function (res) {
               removeLoading();
               if (res.data.success){
-                that.$Message.success({content:res.data.message,duration:3,onClose:function () {
-                  console.log(1)
+                console.log(res)
+                that.$Message.success({content:res.data.message,duration:2,onClose:function () {
                   that.$router.push("/home")
                   }});
               }else {

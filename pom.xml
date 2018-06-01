@@ -32,6 +32,7 @@
         <module>gstart-common</module>
         <module>gstart-demo</module>
         <module>gstart-cms</module>
+        <module>gstart-upms</module>
         <module>gstart-listener</module>
         <module>gstart-version-control</module>
     </modules>
