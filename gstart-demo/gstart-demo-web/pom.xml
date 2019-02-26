@@ -8,9 +8,7 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <properties>
-        <spring.version>5.0.3.RELEASE</spring.version>
-    </properties>
+
     <artifactId>gstart-demo-web</artifactId>
     <packaging>war</packaging>
     <dependencies>
@@ -19,10 +17,6 @@
             <artifactId>gstart-demo-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.gstart</groupId>
-            <artifactId>gstart-demo-dao</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+
     </dependencies>
 </project>
