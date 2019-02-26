@@ -118,6 +118,10 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 
         <!-- Hibernate dependency -->
         <dependency>
@@ -199,6 +203,7 @@
         </dependency>
 
         <!-- zookeeper -->
+
         <!--<dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
@@ -332,13 +337,5 @@
             <url>file:F:\repository\maven</url>
         </repository>
     </distributionManagement>-->
-    <build>
-        <plugins>
-            <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
