@@ -21,7 +21,7 @@
             </Sider>
             <Content :style="{paddingLeft:'20px',minHeight: '280px', background: '#fff'}">
               <g-breadcrumbnav :current-path="currentPath"/>
-              <router-view />
+              <router-view></router-view>
             </Content>
           </Layout>
         </Content>
@@ -63,17 +63,17 @@
     methods : {
       initMenu () {
         var that = this;
-
         this.$ajax({
           method: 'get',
-          url: host.manage() + '/manage/menu'
+          params:{auth:window.localStorage.getItem("authCode")},
+          url: host.manage() + '/manage/menu',
         }).then(function(response) {
             //响应成功回调
             that.$data.meunItems = response.data;
             //菜单选中事件
             that.$data.menuSelect = function(name){
               //刷新页面
-              that.$router.push(name)
+              that.$router.push("/home/"+name)
               //刷新面包屑
             }
             //当前路由改变

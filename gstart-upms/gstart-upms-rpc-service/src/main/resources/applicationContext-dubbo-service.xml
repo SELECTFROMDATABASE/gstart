@@ -9,16 +9,17 @@
     <dubbo:application name="gstart-upms-rpc-service" />
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry address="zookeeper://123.207.99.81:2181" />
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20881" serialization="java"/>
 
-    <dubbo:service interface="com.gstart.upms.rpc.api.SSOService" ref="ssoService" timeout="5000" retries="0" version="1.0"/>
-    <dubbo:service interface="com.gstart.upms.rpc.api.UpmsApiService" ref="upmsService" timeout="5000" retries="0" version="1.0"/>
     <bean id="upmsUserDaoImpl" class="com.gstart.upms.dao.impl.UserDaoImpl"/>
     <bean id="upmsUserDao" class="com.gstart.upms.dao.dao.UserDao" abstract="true" parent="upmsUserDaoImpl"/>
     <bean id="ssoService" class="com.gstart.upms.rpc.service.SSOServiceImpl"/>
     <bean id="upmsService" class="com.gstart.upms.rpc.service.UpmsApiServiceImpl"/>
+    <dubbo:service interface="com.gstart.upms.rpc.api.SSOService" ref="ssoService" timeout="5000" retries="0" version="1.0"/>
+    <dubbo:service interface="com.gstart.upms.rpc.api.UpmsApiService" ref="upmsService" timeout="5000" retries="0" version="1.0"/>
+
 
 </beans>

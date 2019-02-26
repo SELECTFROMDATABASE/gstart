@@ -34,11 +34,13 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
-                /manage/** = authc
-                /manage/index = user
+                /api/** = authc
+                /api/manage/** = authc
+                /api/manage/index = authc
                 /druid/** = user
                 /swagger-ui.html = user
                 /resources/** = anon
+                /sso/login = anon
                 /** = anon
             </value>
         </property>
@@ -55,9 +57,9 @@
             <list>
                 <ref bean="upmsRealm"/>
             </list>
-        </property>
-        <property name="sessionManager" ref="sessionManager"/>
-        <property name="rememberMeManager" ref="rememberMeManager"/>
+        </property><!--
+        <property name="sessionManager" ref="sessionManager"/>-->
+        <property name="subjectDAO.sessionStorageEvaluator.sessionStorageEnabled" value="false"/>
     </bean>
 
 
@@ -65,57 +67,32 @@
     <bean id="upmsRealm" class="com.gstart.upms.client.shiro.realm.UserRealm"></bean>
 
     <!-- 会话管理器 -->
-    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
-        <!-- 全局session超时时间 -->
+<!--    <bean id="sessionManager" class="comA.gstart.upms.client.shiro.manager.SessionManager">
+        &lt;!&ndash; 全局session超时时间 &ndash;&gt;
         <property name="globalSessionTimeout" value="${gstart.upms.session.timeout}"/>
-        <!-- sessionDAO -->
+        &lt;!&ndash; sessionDAO &ndash;&gt;
         <property name="sessionDAO" ref="sessionDAO"/>
-        <property name="sessionIdCookieEnabled" value="true"/>
-        <property name="sessionIdCookie" ref="sessionIdCookie"/>
-        <property name="sessionValidationSchedulerEnabled" value="false"/>
         <property name="sessionListeners">
             <list>
                 <ref bean="sessionListener"/>
             </list>
         </property>
+        <property name="sessionIdCookieEnabled" value="false"/>
         <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    </bean>-->
+    <!-- 配置需要向Cookie中保存数据的配置模版 -->
 
-    <!-- 会话DAO，可重写，持久化session -->
-    <bean id="sessionDAO" class="com.gstart.upms.client.shiro.session.UpmsSessionDao"/>
 
-    <!-- 会话Cookie模板 -->
-    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
-        <!-- 不会暴露给客户端 -->
-        <property name="httpOnly" value="true"/>
-        <!-- 设置Cookie的过期时间，秒为单位，默认-1表示关闭浏览器时过期Cookie -->
-        <property name="maxAge" value="-1"/>
-        <!-- Cookie名称 -->
-        <property name="name" value="${gstart.upms.session.id}"/>
-    </bean>
+<!--    &lt;!&ndash; 会话DAO，可重写，持久化session &ndash;&gt;
+    <bean id="sessionDAO" class="com.gstart.upms.client.shiro.session.UpmsSessionDao">
+    </bean>-->
 
-    <!-- 会话监听器 -->
-    <bean id="sessionListener" class="com.gstart.upms.client.shiro.listener.UpmsSessionListener"/>
-
-    <!-- session工厂 -->
+<!--
+    &lt;!&ndash; session工厂 &ndash;&gt;
     <bean id="sessionFactory" class="com.gstart.upms.client.shiro.session.UpmsSessionFactory"/>
+-->
 
-    <!-- rememberMe管理器 -->
-    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
-        <!-- rememberMe cookie加密的密钥 建议每个项目都不一样 默认AES算法 密钥长度（128 256 512 位）-->
-        <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}"/>
-        <property name="cookie" ref="rememberMeCookie"/>
-    </bean>
-
-    <!-- rememberMe缓存cookie -->
-    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
-        <constructor-arg value="rememberMe"/>
-        <!-- 不会暴露给客户端 -->
-        <property name="httpOnly" value="true"/>
-        <!-- 记住我cookie生效时间 -->
-        <property name="maxAge" value="${gstart.upms.rememberMe.timeout}"/>
-    </bean>
-    <!-- 设置SecurityUtils，相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+    <!-- 设置SecurityUtils，相当于调用SecurityUtils.setSecurityManager(securiUpmsAuthenticationFiltertyManager) -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
         <property name="arguments" ref="securityManager"/>

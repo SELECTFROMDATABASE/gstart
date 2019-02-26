@@ -16,7 +16,7 @@ import java.io.ObjectOutputStream;
  */
 public class SerializableUtil {
 
-    public static String serialize(Session session) {
+    public static String serialize(Object session) {
         if (null == session) {
             return null;
         }
@@ -30,14 +30,14 @@ public class SerializableUtil {
         }
     }
 
-    public static Session deserialize(String sessionStr) {
+    public static Object deserialize(String sessionStr) {
         if (StringUtils.isBlank(sessionStr)) {
             return null;
         }
         try {
             ByteArrayInputStream bis = new ByteArrayInputStream(Base64.decode(sessionStr));
             ObjectInputStream ois = new ObjectInputStream(bis);
-            return (Session) ois.readObject();
+            return ois.readObject();
         } catch (Exception e) {
             throw new RuntimeException("deserialize session error", e);
         }

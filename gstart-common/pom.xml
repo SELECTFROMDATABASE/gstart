@@ -15,12 +15,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.1.5.RELEASE</spring.version>
+        <spring.version>5.0.3.RELEASE</spring.version>
         <hibernate.version>5.2.10.Final</hibernate.version>
         <dubbo.version>1.0.0</dubbo.version>
         <zookeeper.version>3.4.6</zookeeper.version>
         <shiro.version>1.2.2</shiro.version>
         <logger.version>1.7.12</logger.version>
+        <jwt.version>3.3.0</jwt.version>
+        <oltu.version>1.0.1</oltu.version>
 
         <poi.version>3.15</poi.version>
         <jackson.version>2.9.4</jackson.version>
@@ -85,7 +87,6 @@
             <version>${spring.version}</version>
         </dependency>
 
-        &lt;!&ndash; 4)spring aop相关依赖 &ndash;&gt;
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
@@ -240,7 +241,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>8.0</version>
+            <version>7.0</version>
         </dependency>
 
         <!-- json 包 -->
@@ -322,6 +323,36 @@
             <version>${shiro.version}</version>
         </dependency>
 
+        <!--json-web-token-->
+        <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
+
+        <dependency>
+
+            <groupId>org.apache.oltu.oauth2</groupId>
+
+            <artifactId>org.apache.oltu.oauth2.client</artifactId>
+
+            <version>${oltu.version}</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.oltu.oauth2</groupId>
+            <artifactId>org.apache.oltu.oauth2.authzserver</artifactId>
+            <version>${oltu.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.oltu.oauth2</groupId>
+            <artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>
+            <version>${oltu.version}</version>
+        </dependency>
+
         <!--  -->
         <dependency>
             <groupId>com.baidu.unbiz</groupId>
@@ -330,12 +361,5 @@
         </dependency>
 
     </dependencies>
-    <!-- 发布设置
-    <distributionManagement>
-        <repository>
-            <id>localRepository</id>
-            <url>file:F:\repository\maven</url>
-        </repository>
-    </distributionManagement>-->
 
 </project>

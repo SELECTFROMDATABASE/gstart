@@ -10,7 +10,23 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/cms/apis': {
+        target: 'http://localhost:8889',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/cms/apis': ''
+        }
+      },
+      '/upms/apis':{
+        target: 'http://localhost:33333',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/upms/apis': ''
+        }
+      },
+      secure:false
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -40,7 +56,7 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
 
-    cssSourceMap: true
+    cssSourceMap: true,
   },
 
   build: {

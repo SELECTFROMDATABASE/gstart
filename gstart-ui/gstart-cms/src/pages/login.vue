@@ -92,8 +92,8 @@
             .then(function (res) {
               removeLoading();
               if (res.data.success){
-                console.log(res)
                 that.$Message.success({content:res.data.message,duration:2,onClose:function () {
+                  window.localStorage.setItem("authCode",JSON.parse(res.data.data).authCode)
                   that.$router.push("/home")
                   }});
               }else {
@@ -101,6 +101,7 @@
               }
             })
               .catch(function (error) {
+                console.log(document.cookie)
                 that.$Message.error(error);
               });
 

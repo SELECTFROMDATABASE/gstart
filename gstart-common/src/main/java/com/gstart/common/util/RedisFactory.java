@@ -26,6 +26,7 @@ public class RedisFactory {
         je.setMaxWaitMillis(Long.valueOf(pro.get("master.redis.maxWait")));
         je.setTestOnBorrow(Boolean.valueOf(pro.get("master.redis.testOnBorrow")));
         je.setTestOnReturn(Boolean.valueOf(pro.get("master.redis.testOnReturn")));
+
         pool = new JedisPool(je, pro.get("master.redis.ip"));
     }
 
@@ -33,7 +34,11 @@ public class RedisFactory {
         if (pool == null) {
             pool = new JedisPool(je, pro.get("master.redis.ip"));
         }
-        return pool.getResource();
+        Jedis j = pool.getResource();
+        if (!StringUtil.isBlank(pro.get("master.redis.password"))){
+            j.auth(pro.get("master.redis.password"));
+        }
+        return j;
     }
 
     public static Function<Function<Jedis, Object>, Object> returnJedis = (s) -> {
@@ -106,6 +111,13 @@ public class RedisFactory {
         return (Set<String>) returnJedis.apply(jedis -> {
             LOGGER.info(" Redis smembers '{}' ", s);
             return jedis.smembers(s);
+        });
+    }
+
+    public static boolean exist(String s){
+        return (boolean) returnJedis.apply(jedis -> {
+            LOGGER.info(" Redis exist '{}'",s);
+            return jedis.exists(s);
         });
     }
 

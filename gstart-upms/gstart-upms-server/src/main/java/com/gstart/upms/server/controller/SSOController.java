@@ -1,23 +1,31 @@
 package com.gstart.upms.server.controller;
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.gstart.common.base.BaseController;
 import com.gstart.common.bean.Message;
+import com.gstart.common.util.RandomUtil;
 import com.gstart.common.util.RedisFactory;
-import com.gstart.upms.client.shiro.session.UpmsSessionDao;
+import com.gstart.common.util.SerializableUtil;
+import com.gstart.upms.client.shiro.token.UserToken;
+import com.gstart.upms.server.controller.bean.AuthMessage;
+import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
+import org.apache.oltu.oauth2.common.utils.JSONUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.json.stream.JsonParserFactory;
 import javax.servlet.http.HttpServletRequest;
-import java.util.UUID;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Optional;
 
 /**
  * @author yangguangye
@@ -39,13 +47,13 @@ public class SSOController extends BaseController {
     private final static String GSTART_UPMS_SERVER_CODE = "gstart-upms-server-code";
     @Autowired
     HttpServletRequest request;
+    @Autowired
+    HttpServletResponse response;
 
     @Autowired
     SecurityManager securityManager;
 
 
-    @Autowired
-    UpmsSessionDao upmsSessionDao;
 
     @ResponseBody
     @RequestMapping(value = "/login",method = RequestMethod.POST)
@@ -55,27 +63,21 @@ public class SSOController extends BaseController {
         message.setMessage("登录成功");
         String account = u.getAccount();
         String password = u.getPassword();
-        SecurityUtils.setSecurityManager(securityManager);
-        Subject subject = SecurityUtils.getSubject();
-        Session session = subject.getSession();
-        String sessionId = session.getId().toString();
-        UsernamePasswordToken token = new UsernamePasswordToken(u.getAccount(), u.getPassword());
 
         // 判断是否已登录，如果已登录，则回跳，防止重复登录
-        String hasCode = RedisFactory.get(GSTART_UPMS_SERVER_SESSION_ID + "_" + sessionId);
-        System.out.println(hasCode == null);
+        String hasCode = RedisFactory.get(Optional.ofNullable(request.getParameter("auth")).orElse(""));
         if (StringUtils.isBlank(hasCode)){
             try {
+                SecurityUtils.setSecurityManager(securityManager);
+                Subject subject = SecurityUtils.getSubject();
+                UserToken token = new UserToken.Server().username(u.getAccount()).password(u.getPassword()).build();
                 //4、登录，即身份验证
-                subject.login(token);
-                // 全局会话sessionId列表，供会话管理
-                RedisFactory.lpush(GSTART_UPMS_SERVER_SESSION_IDS, sessionId.toString());
-                // 默认验证帐号密码正确，创建code
-                String code = UUID.randomUUID().toString();
-                // 全局会话的code
-                RedisFactory.set(GSTART_UPMS_SERVER_SESSION_ID + "_" + sessionId, code, (int) subject.getSession().getTimeout() / 1000);
-                // code校验值
-                //RedisFactory.set(GSTART_UPMS_SERVER_CODE + "_" + code, code, (int) subject.getSession().getTimeout() / 1000);
+                login(subject,token);
+                //注册授权码
+                String authCode = auth(subject);
+                AuthMessage message1 = new AuthMessage();
+                message1.setAuthCode(authCode);
+                message.setData(JSONObject.fromBean(message1).toString());
             } catch (Exception e) {
                 //5、身份验证失败
                 if (e instanceof IncorrectCredentialsException){
@@ -89,11 +91,23 @@ public class SSOController extends BaseController {
                     message.setMessage("帐号不存在");
                 }
                 return message;
-
             }
         }
 
         //6、退出
         return message;
+    }
+
+    private void login(Subject subject, UserToken token){
+        subject.login(token);
+    }
+
+    private String auth(Subject subject){
+        String auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
+        while(RedisFactory.exist(auth)){
+            auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
+        }
+        RedisFactory.set(auth,(subject).toString());
+        return auth;
     }
 }
