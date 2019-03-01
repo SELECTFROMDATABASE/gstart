@@ -1,23 +1,23 @@
 package com.gstart.demo.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.gstart.demo.dao.dao.DemoDao;
-import com.gstart.demo.dao.pojo.Demo;
+import com.gstart.demo.repository.DemoRepository;
 import com.gstart.demo.rpc.api.DemoService;
+import org.apache.commons.collections4.iterators.IteratorIterable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
-@Service
+@RestController
 public class DemoServiceImpl implements DemoService{
-
+/*
     @Autowired
-    private DemoDao demoDao;
-    @Override
+    private DemoRepository demoRepository;*/
+
     public String sayHello() {
-        return "hello world";
+        return "hello world1";
     }
 
-    @Override
-    public void createDemo(Demo demo) {/*
-        demoDao.saveDemo(demo);*/
+    public String testDao() {
+        return "1111";
     }
+
 }

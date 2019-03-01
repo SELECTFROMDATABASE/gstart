@@ -1,6 +1,5 @@
 package com.gstart.common.aspect;
 
-import com.alibaba.dubbo.rpc.RpcContext;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -20,7 +19,7 @@ public class RPCLogAspect {
     @Around("execution(* *..rpc..*.*(..))")
     public Object doServiceAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object o = joinPoint.proceed();
-        String host = RpcContext.getContext().getRemoteHost();
+        /*String host = RpcContext.getContext().getRemoteHost();
         Object serviceName = joinPoint.getTarget();
         if(RpcContext.getContext().isProviderSide()){
             logger.info("provider side : Host = {}, service = {} ",host,serviceName);
@@ -28,7 +27,7 @@ public class RPCLogAspect {
         if(RpcContext.getContext().isConsumerSide()){
             logger.info("consumer side : Host = {}, service = {} ",host,serviceName);
 
-        }
+        }*/
         return o;
     }
 }

@@ -10,12 +10,66 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>gstart-demo</artifactId>
     <packaging>pom</packaging>
+    <properties>
+        <gstart.demo.rpc.api.version>1.0.0</gstart.demo.rpc.api.version>
+        <gstart.demo.rpc.service.version>1.0.0</gstart.demo.rpc.service.version>
+        <gstart.demo.dao.version>1.0.0</gstart.demo.dao.version>
+        <gstart.demo.web.version>1.0.0</gstart.demo.web.version>
+    </properties>
+
     <modules>
         <module>gstart-demo-rpc-api</module>
         <module>gstart-demo-rpc-service</module>
-        <module>gstart-demo-dao</module>
+        <module>gstart-demo-repository</module>
         <module>gstart-demo-web</module>
     </modules>
+    <!-- 管理当前版本 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.gstart</groupId>
+                <artifactId>gstart-demo-repository</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gstart</groupId>
+                <artifactId>gstart-demo-rpc-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gstart</groupId>
+                <artifactId>gstart-demo-rpc-service</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gstart</groupId>
+                <artifactId>gstart-demo-web</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <skipTests>true</skipTests>    <!--默认关掉单元测试 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

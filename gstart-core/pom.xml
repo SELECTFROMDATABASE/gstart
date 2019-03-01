@@ -7,11 +7,11 @@
         <version>1.0.0</version>
     </parent>
     <groupId>com.gstart</groupId>
-    <artifactId>gstart-common</artifactId>
+    <artifactId>gstart-core</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>gstart-common</name>
+    <name>gstart-core</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -123,9 +123,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
         <!-- Hibernate dependency -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
@@ -134,7 +149,7 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
-        </dependency>
+        </dependency>-->
 
         <!-- mysql -->
         <dependency>
@@ -193,11 +208,11 @@
 
         <!-- dubbo -->
         <!-- https://mvnrepository.com/artifact/com.alibaba.boot/dubbo-spring-boot-starter -->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>0.2.0</version>
-        </dependency>
+        </dependency>-->
 
 
         <!-- zookeeper -->
@@ -212,22 +227,6 @@
             <artifactId>curator-framework</artifactId>
             <version>4.0.1</version>
         </dependency>-->
-
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>${zookeeper.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <!-- aspectj -->
         <dependency>
@@ -329,13 +328,9 @@
         </dependency>
 
         <dependency>
-
             <groupId>org.apache.oltu.oauth2</groupId>
-
             <artifactId>org.apache.oltu.oauth2.client</artifactId>
-
             <version>${oltu.version}</version>
-
         </dependency>
 
         <dependency>

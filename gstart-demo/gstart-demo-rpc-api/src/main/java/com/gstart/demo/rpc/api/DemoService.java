@@ -1,8 +1,13 @@
 package com.gstart.demo.rpc.api;
 
-import com.gstart.demo.dao.pojo.Demo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequestMapping(value = "/api/demo")
 public interface DemoService {
+
+    @GetMapping(value = "/instance")
     String sayHello();
-    void createDemo(Demo demo);
+    @GetMapping(value = "/dao")
+    String testDao();
 }
