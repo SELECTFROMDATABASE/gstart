@@ -3,54 +3,42 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>gstart-demo</artifactId>
+        <artifactId>gstart-cloud-core-server</artifactId>
         <groupId>com.gstart</groupId>
         <version>1.0.0</version>
+        <relativePath>../../gstart-cloud-core/gstart-cloud-core-server</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <properties>
-        <dubbo.version>2.5.3</dubbo.version>
-    </properties>
     <artifactId>gstart-demo-rpc-service</artifactId>
+    <version>1.0.0</version>
+
     <dependencies>
-        <dependency>
-            <groupId>com.gstart</groupId>
-            <artifactId>gstart-demo-dao</artifactId>
-            <version>1.0.0</version>
-            <type>jar</type>
-        </dependency>
         <dependency>
             <groupId>com.gstart</groupId>
             <artifactId>gstart-demo-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.gstart</groupId>
-            <artifactId>gstart-common</artifactId>
-            <version>1.0.0</version>
-            <type>jar</type>
-        </dependency>
 
     </dependencies>
-    <!--<build>
+    <build>
         <plugins>
             <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4.1</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    <!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>com.gstart.demo.service.Start</mainClass>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
                         <goals>
-                            <goal>single</goal>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
                         </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
+
 
 </project>

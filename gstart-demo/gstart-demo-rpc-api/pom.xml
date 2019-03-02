@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-demo-dao</artifactId>
+            <artifactId>gstart-demo-repository</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
