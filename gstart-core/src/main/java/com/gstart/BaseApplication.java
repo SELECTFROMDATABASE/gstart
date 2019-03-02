@@ -1,4 +1,4 @@
-package com.gstart.common;
+package com.gstart;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

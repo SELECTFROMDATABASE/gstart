@@ -1,10 +1,7 @@
-package com.gstart.demo.web;
+package com.gstart.demo.web.service;
 
 import com.gstart.demo.rpc.api.DemoService;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ Author     ：yangguangye.
@@ -14,6 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version: $
  */
 @FeignClient(value = "demo-service")
-public interface DemoServiceTest extends DemoService {
+public interface DemoServiceFeign extends DemoService {
 
 }

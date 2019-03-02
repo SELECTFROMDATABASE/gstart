@@ -11,6 +11,5 @@ import org.springframework.stereotype.Repository;
  * @ Modified By：
  * @Version: $
  */
-@Repository
 public interface DemoRepository extends JpaRepository<Demo,Integer> {
 }
