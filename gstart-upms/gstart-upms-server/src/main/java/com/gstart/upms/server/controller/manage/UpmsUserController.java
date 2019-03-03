@@ -1,7 +1,7 @@
 package com.gstart.upms.server.controller.manage;
 
 import com.gstart.common.base.BaseController;
-import com.gstart.upms.dao.pojo.User;
+import com.gstart.upms.rpc.api.pojo.User;
 import org.springframework.web.bind.annotation.*;
 
 /**

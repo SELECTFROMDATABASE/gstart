@@ -3,10 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>gstart-cloud-core-client</artifactId>
+        <artifactId>gstart-demo</artifactId>
         <groupId>com.gstart</groupId>
         <version>1.0.0</version>
-        <relativePath>../../gstart-cloud-core/gstart-cloud-core-client</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>gstart-demo-web</artifactId>
@@ -15,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-demo-rpc-api</artifactId>
+            <artifactId>gstart-demo-rpc-service</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

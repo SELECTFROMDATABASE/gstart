@@ -1,6 +1,8 @@
 package com.gstart.upms.rpc.api;
 
-import com.gstart.upms.dao.pojo.User;
+import com.gstart.upms.rpc.api.pojo.User;
+
+import java.util.List;
 
 /**
  * @author yangguangye
@@ -9,4 +11,6 @@ import com.gstart.upms.dao.pojo.User;
  */
 public interface UpmsApiService {
     User getUserByAccount(User user);
+    List<User> getAllUser();
+
 }

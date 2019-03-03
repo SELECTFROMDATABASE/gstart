@@ -8,13 +8,27 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>gstart-upms-repository</artifactId>
+    <packaging>jar</packaging>
 
-    <artifactId>gstart-upms-client</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-upms-rpc-service</artifactId>
+            <artifactId>gstart-core</artifactId>
             <version>1.0.0</version>
+            <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.gstart</groupId>
+            <artifactId>gstart-upms-rpc-api</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
     </dependencies>
+
 </project>

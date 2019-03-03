@@ -2,8 +2,8 @@ package com.gstart.upms.client.shiro.realm;
 
 import com.gstart.common.util.PropertyUtil;
 import com.gstart.upms.client.shiro.token.UserToken;
-import com.gstart.upms.dao.pojo.User;
 import com.gstart.upms.rpc.api.UpmsApiService;
+import com.gstart.upms.rpc.api.pojo.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -97,7 +97,11 @@ public class UserRealm extends AuthorizingRealm {
         }*/
 
                 // 查询用户信息
+/*
                 User upmsUser = upmsApiService.getUserByAccount(u);
+*/
+                User upmsUser = upmsApiService.getAllUser().get(0);
+
                 if (null == upmsUser) {
                     throw new UnknownAccountException();
                 }

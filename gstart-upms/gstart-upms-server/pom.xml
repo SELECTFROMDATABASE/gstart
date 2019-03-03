@@ -11,16 +11,16 @@
 
     <artifactId>gstart-upms-server</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-upms-rpc-api</artifactId>
+            <artifactId>gstart-upms-client</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-upms-client</artifactId>
+            <artifactId>gstart-upms-rpc-service</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
@@ -49,23 +49,22 @@
         </profile>
     </profiles>
     <build>
-        <finalName>gstart-upms-server</finalName>
-        <filters>
-            <filter>src/main/resources/properties/${env}.properties</filter>
-        </filters>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
-                </includes>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>com.gstart.UpmsServerApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>

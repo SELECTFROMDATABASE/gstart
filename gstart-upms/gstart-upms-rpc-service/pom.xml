@@ -16,30 +16,15 @@
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-upms-dao</artifactId>
+            <artifactId>gstart-upms-repository</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.gstart</groupId>
-            <artifactId>gstart-upms-rpc-api</artifactId>
-            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.gstart</groupId>
             <artifactId>gstart-core</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>0.10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
 

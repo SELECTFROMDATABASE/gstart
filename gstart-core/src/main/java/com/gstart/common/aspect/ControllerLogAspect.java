@@ -14,9 +14,16 @@ public class ControllerLogAspect {
     private static final Logger logger = LoggerFactory.getLogger(ControllerLogAspect.class);
 
     @Around("execution(* *..controller..*.*(..))")
-    public Object doServiceAround(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object doControllerAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object o = joinPoint.proceed();
         logger.info("controller \""+joinPoint.getTarget()+"\" has visited");
         return o;
     }
+
+   /* @Around("execution(* *..service..*.*(..))")
+    public Object doServiceAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        Object o = joinPoint.proceed();
+        logger.info("service \""+joinPoint.getTarget()+"\" has visited");
+        return o;
+    }*/
 }

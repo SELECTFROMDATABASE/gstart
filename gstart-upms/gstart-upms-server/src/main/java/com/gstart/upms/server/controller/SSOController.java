@@ -1,31 +1,14 @@
 package com.gstart.upms.server.controller;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.gstart.common.base.BaseController;
-import com.gstart.common.bean.Message;
-import com.gstart.common.util.RandomUtil;
-import com.gstart.common.util.RedisFactory;
-import com.gstart.common.util.SerializableUtil;
-import com.gstart.upms.client.shiro.token.UserToken;
-import com.gstart.upms.server.controller.bean.AuthMessage;
-import net.sf.json.JSONObject;
-import org.apache.commons.lang.StringUtils;
-import org.apache.oltu.oauth2.common.utils.JSONUtils;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.LockedAccountException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.subject.Subject;
+import com.gstart.upms.rpc.api.UpmsApiService;
+import com.gstart.upms.rpc.api.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.json.stream.JsonParserFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Optional;
+import java.util.List;
 
 /**
  * @author yangguangye
@@ -36,7 +19,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/sso")
 public class SSOController extends BaseController {
-
 
     // 全局会话key
     private final static String GSTART_UPMS_SERVER_SESSION_ID = "gstart-upms-server-session-id";
@@ -49,15 +31,22 @@ public class SSOController extends BaseController {
     HttpServletRequest request;
     @Autowired
     HttpServletResponse response;
+/*
+    @Autowired
+    SecurityManager securityManager;*/
 
     @Autowired
-    SecurityManager securityManager;
-
-
+    private  UpmsApiService upmsApiService;
 
     @ResponseBody
+    @GetMapping(value = "/getall")
+    public List<User> getAll(){
+        return upmsApiService.getAllUser();
+    }
+
+    /*@ResponseBody
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Message login(@RequestBody com.gstart.upms.dao.pojo.User u){
+    public Message login(@RequestBody User u){
         Message message = new Message();
         message.setSuccess(true);
         message.setMessage("登录成功");
@@ -109,5 +98,5 @@ public class SSOController extends BaseController {
         }
         RedisFactory.set(auth,(subject).toString());
         return auth;
-    }
+    }*/
 }

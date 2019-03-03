@@ -1,25 +1,34 @@
 package com.gstart.upms.rpc.service;
 
-import com.gstart.upms.dao.dao.UserDao;
-import com.gstart.upms.dao.pojo.User;
+import com.gstart.upms.repository.UserRepository;
 import com.gstart.upms.rpc.api.UpmsApiService;
+import com.gstart.upms.rpc.api.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author yangguangye
  * @Create by gzpykj
  * @Date 2018-05-19 15:35
  */
+@Service
 public class UpmsApiServiceImpl implements UpmsApiService{
 
     @Autowired
-    private UserDao userDao;
+    private UserRepository userRepository;
 
-    @Override
     public User getUserByAccount(User user) {
-        User u = userDao.getUserByAccount(user);
+        User u = userRepository.findAll(Example.of(user)).get(0);
         return u;
     }
+
+
+    public List<User> getAllUser() {
+        return userRepository.findAll();
+    }
+
+
 }

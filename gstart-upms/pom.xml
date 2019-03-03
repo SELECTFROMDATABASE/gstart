@@ -14,9 +14,8 @@
     <artifactId>gstart-upms</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>gstart-upms-common</module>
         <module>gstart-upms-server</module>
-        <module>gstart-upms-dao</module>
+        <module>gstart-upms-repository</module>
         <module>gstart-upms-rpc-api</module>
         <module>gstart-upms-rpc-service</module>
         <module>gstart-upms-client</module>

@@ -1,10 +1,6 @@
 package com.gstart;
 
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
-import org.springframework.context.annotation.FilterType;
 
 /**
  * @ Author     ：yangguangye.
@@ -14,11 +10,5 @@ import org.springframework.context.annotation.FilterType;
  * @Version: $
  */
 @SpringBootApplication
-/*
-@ComponentScan(includeFilters ={
-@ComponentScan.Filter(type=FilterType.REGEX,
-        pattern="com\\.gstart\\.demo\\.repository\\.*"),
-@ComponentScan.Filter(type=FilterType.REGEX,
-        pattern="com\\.gstart\\.*\\.service\\.*\\..*")})*/
 public interface BaseApplication {
 }
