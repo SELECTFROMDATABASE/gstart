@@ -14,7 +14,9 @@
 
     <properties>
         <zookeeper.version>3.4.6</zookeeper.version>
+<!--
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+-->
 
     </properties>
 
@@ -24,20 +26,34 @@
         <module>gstart-cloud-core-server</module>
         <module>gstart-cloud-core-client</module>
     </modules>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.gstart</groupId>
-                <artifactId>gstart-cloud-core-client</artifactId>
-                <version>1.0.0</version>
-            </dependency>
 
-            <dependency>
-                <groupId>com.gstart</groupId>
-                <artifactId>gstart-cloud-core-server</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/libs-snapshot-local</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

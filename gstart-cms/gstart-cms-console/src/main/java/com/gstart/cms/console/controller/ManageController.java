@@ -1,16 +1,10 @@
 package com.gstart.cms.console.controller;
 
 
-import com.gstart.cms.dao.pojo.Menu;
-import com.gstart.cms.dao.pojo.User;
 import com.gstart.cms.rpc.api.MenuService;
 import com.gstart.common.base.BaseController;
-import com.gstart.common.util.RedisFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/manage")

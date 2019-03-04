@@ -1,6 +1,6 @@
 package com.gstart.cms.rpc.api;
 
-import com.gstart.cms.dao.pojo.Menu;
+import com.gstart.cms.rpc.api.pojo.Menu;
 
 import java.util.List;
 

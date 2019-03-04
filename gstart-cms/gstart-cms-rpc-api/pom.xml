@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-cms-dao</artifactId>
+            <artifactId>gstart-core</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>

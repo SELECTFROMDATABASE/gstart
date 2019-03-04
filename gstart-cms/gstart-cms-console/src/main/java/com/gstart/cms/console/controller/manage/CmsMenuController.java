@@ -1,9 +1,8 @@
 package com.gstart.cms.console.controller.manage;
 
-import com.gstart.cms.dao.pojo.Menu;
 import com.gstart.cms.rpc.api.MenuService;
+import com.gstart.cms.rpc.api.pojo.Menu;
 import com.gstart.common.base.BaseController;
-import com.gstart.upms.repository.pojo.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;

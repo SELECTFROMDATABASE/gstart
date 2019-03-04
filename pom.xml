@@ -40,9 +40,10 @@
     <modules>
         <module>gstart-core</module>
         <module>gstart-demo</module>
-        <!--<module>gstart-cms</module>-->
+        <module>gstart-core-repository</module>
+        <!--<module>gstart-cms</module>
         <module>gstart-upms</module>
-        <module>gstart-cloud-core</module>
+        <module>gstart-cloud-core</module>-->
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -60,7 +61,7 @@
                 <groupId>com.gstart</groupId>
                 <artifactId>gstart-cms</artifactId>
                 <version>1.0.0</version>
-            </dependency>-->
+            </dependency>
             <dependency>
                 <groupId>com.gstart</groupId>
                 <artifactId>gstart-upms</artifactId>
@@ -70,7 +71,7 @@
                 <groupId>com.gstart</groupId>
                 <artifactId>gstart-cloud-core</artifactId>
                 <version>1.0.0</version>
-            </dependency>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 </project>

@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>gstart-cms-common</module>
-        <module>gstart-cms-dao</module>
+        <module>gstart-cms-repository</module>
         <module>gstart-cms-console</module>
         <module>gstart-cms-rpc-api</module>
         <module>gstart-cms-rpc-service</module>

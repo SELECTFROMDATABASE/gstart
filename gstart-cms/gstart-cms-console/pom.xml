@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-cms-dao</artifactId>
+            <artifactId>gstart-cms-repository</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>

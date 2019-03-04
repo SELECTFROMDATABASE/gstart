@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
-            <artifactId>gstart-cms-dao</artifactId>
+            <artifactId>gstart-cms-repository</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>
@@ -30,16 +30,6 @@
             <artifactId>gstart-core</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>0.10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
 

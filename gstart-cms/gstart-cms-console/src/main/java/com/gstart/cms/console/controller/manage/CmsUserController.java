@@ -1,12 +1,10 @@
 package com.gstart.cms.console.controller.manage;
 
-import com.gstart.cms.dao.pojo.User;
+import com.gstart.cms.rpc.api.pojo.User;
 import com.gstart.cms.rpc.api.UserService;
 import com.gstart.common.base.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.enterprise.inject.Model;
 
 /**
  * @author yangguangye
