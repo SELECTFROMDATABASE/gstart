@@ -6,6 +6,7 @@ import com.gstart.upms.rpc.api.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * @Create by gzpykj
  * @Date 2018-05-19 15:35
  */
-@Service
+@RestController
 public class UpmsApiServiceImpl implements UpmsApiService{
 
     @Autowired

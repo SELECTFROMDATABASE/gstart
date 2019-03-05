@@ -16,6 +16,17 @@
         <gstart.demo.dao.version>1.0.0</gstart.demo.dao.version>
         <gstart.demo.web.version>1.0.0</gstart.demo.web.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <modules>
         <module>gstart-demo-rpc-api</module>

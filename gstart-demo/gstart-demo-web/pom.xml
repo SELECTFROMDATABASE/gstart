@@ -22,13 +22,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>com.gstart</groupId>
             <artifactId>gstart-demo-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!-- cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zookeeper-all</artifactId>

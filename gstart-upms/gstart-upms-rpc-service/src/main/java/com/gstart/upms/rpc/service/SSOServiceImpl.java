@@ -18,6 +18,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
@@ -26,13 +27,12 @@ import java.util.Optional;
  * @Create by gzpykj
  * @Date 2018-05-15 15:32
  */
-@Service
+@RestController
 public class SSOServiceImpl implements SSOService{
 
-    @Autowired
-    SecurityManager securityManager;
+    public SecurityManager securityManager;
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         //1、获取SecurityManager工厂，此处使用Ini配置文件初始化
         Factory<org.apache.shiro.mgt.SecurityManager> factory =
         new IniSecurityManagerFactory("classpath:shiro.ini");
@@ -60,7 +60,7 @@ public class SSOServiceImpl implements SSOService{
         System.out.println(subject.getSession().getAttribute("test"));;
         subject.logout();
         subject1.logout();
-    }
+    }*/
 
     @Override
     public Message login(User u,Object auth) {
@@ -75,6 +75,9 @@ public class SSOServiceImpl implements SSOService{
         String hasCode = RedisFactory.get(Optional.ofNullable(auth.toString()).orElse(""));
         if (StringUtils.isBlank(hasCode)){
             try {
+                if (securityManager == null){
+                    throw new RuntimeException("Service need a SecurityManager,try set a securityManager.");
+                }
                 SecurityUtils.setSecurityManager(securityManager);
                 Subject subject = SecurityUtils.getSubject();
                 UserToken token = new UserToken.Server().username(u.getAccount()).password(u.getPassword()).build();

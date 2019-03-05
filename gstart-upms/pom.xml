@@ -20,5 +20,20 @@
         <module>gstart-upms-rpc-service</module>
         <module>gstart-upms-client</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>

@@ -7,6 +7,8 @@ import com.gstart.common.util.RedisFactory;
 import com.gstart.upms.rpc.api.SSOService;
 import com.gstart.upms.rpc.api.UpmsApiService;
 import com.gstart.upms.rpc.api.pojo.User;
+import com.gstart.upms.server.mock.SSOServiceMock;
+import com.gstart.upms.server.mock.UpmsApiServiceMock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,21 +43,21 @@ public class SSOController extends BaseController {
     SecurityManager securityManager;*/
 
     @Autowired
-    private  UpmsApiService upmsApiService;
+    private UpmsApiServiceMock upmsApiServiceMock;
 
     @Autowired
-    private SSOService ssoService;
+    private SSOServiceMock ssoServiceMock;
 
     @ResponseBody
     @GetMapping(value = "/getall")
     public List<User> getAll(){
-        return upmsApiService.getAllUser();
+        return upmsApiServiceMock.getAllUser();
     }
 
     @ResponseBody
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public Message login(@RequestBody User u){
-        return ssoService.login(u,request.getParameter("auth"));
+        return ssoServiceMock.login(u,request.getParameter("auth"));
     }
 
 
