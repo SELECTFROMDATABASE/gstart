@@ -25,11 +25,16 @@
             <artifactId>gstart-cms-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!-- cloud -->
         <dependency>
-            <groupId>com.gstart</groupId>
-            <artifactId>gstart-core</artifactId>
-            <version>1.0.0</version>
-            <type>jar</type>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-all</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

@@ -20,7 +20,11 @@
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>
-
+        <dependency>
+            <groupId>com.gstart</groupId>
+            <artifactId>gstart-upms-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

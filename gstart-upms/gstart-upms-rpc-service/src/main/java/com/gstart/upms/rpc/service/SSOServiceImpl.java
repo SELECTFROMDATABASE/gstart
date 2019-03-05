@@ -29,7 +29,7 @@ import java.util.Optional;
  */
 @RestController
 public class SSOServiceImpl implements SSOService{
-
+    @Autowired
     public SecurityManager securityManager;
 
     /*public static void main(String[] args) {
@@ -76,6 +76,7 @@ public class SSOServiceImpl implements SSOService{
         if (StringUtils.isBlank(hasCode)){
             try {
                 if (securityManager == null){
+                    System.out.println(securityManager);
                     throw new RuntimeException("Service need a SecurityManager,try set a securityManager.");
                 }
                 SecurityUtils.setSecurityManager(securityManager);

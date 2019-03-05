@@ -22,7 +22,7 @@ import java.util.Optional;
  * @Create by gzpykj
  * @Date 2018-05-19 10:28
  */
-@CrossOrigin(origins = {"http://localhost:8080"},allowCredentials = "true")
+
 @RestController
 @RequestMapping(value = "/sso")
 public class SSOController extends BaseController {
@@ -55,9 +55,10 @@ public class SSOController extends BaseController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @PostMapping(value = "/login")
     public Message login(@RequestBody User u){
-        return ssoServiceMock.login(u,request.getParameter("auth"));
+        System.out.println(123);
+        return ssoServiceMock.login(u,Optional.ofNullable(request.getParameter("auth")).orElse(""));
     }
 
 

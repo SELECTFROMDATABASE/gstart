@@ -12,15 +12,30 @@
     <groupId>com.gstart</groupId>
     <artifactId>gstart-cms</artifactId>
     <packaging>pom</packaging>
+    <version>1.0.0</version>
+
     <modules>
-        <module>gstart-cms-common</module>
         <module>gstart-cms-repository</module>
         <module>gstart-cms-console</module>
         <module>gstart-cms-rpc-api</module>
         <module>gstart-cms-rpc-service</module>
     </modules>
 
-    <version>1.0.0</version>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>

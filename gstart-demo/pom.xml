@@ -34,31 +34,6 @@
         <module>gstart-demo-repository</module>
         <module>gstart-demo-web</module>
     </modules>
-    <!-- 管理当前版本 -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.gstart</groupId>
-                <artifactId>gstart-demo-repository</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gstart</groupId>
-                <artifactId>gstart-demo-rpc-api</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gstart</groupId>
-                <artifactId>gstart-demo-rpc-service</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gstart</groupId>
-                <artifactId>gstart-demo-web</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
