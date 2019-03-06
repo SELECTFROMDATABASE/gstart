@@ -18,7 +18,11 @@
             <artifactId>gstart-upms-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.gstart</groupId>
+            <artifactId>gstart-upms-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

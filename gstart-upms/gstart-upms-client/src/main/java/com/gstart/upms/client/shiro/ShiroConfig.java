@@ -45,14 +45,15 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
-        filterChainDefinitionMap.put("/api/**", "authc");
+        filterChainDefinitionMap.put("/api/upms/login", "anon");
         filterChainDefinitionMap.put("/api/manage/**", "authc");
         filterChainDefinitionMap.put("/api/manage/index", "authc");
-        filterChainDefinitionMap.put("/druid/**", "user");
 
         filterChainDefinitionMap.put("/swagger-ui.html", "user");
-        filterChainDefinitionMap.put("/resources/**", "anon");
         filterChainDefinitionMap.put("/sso/login", "anon");
+        filterChainDefinitionMap.put("/resources/**", "anon");
+        filterChainDefinitionMap.put("/druid/**", "user");
+        filterChainDefinitionMap.put("/api/**", "authc");
         filterChainDefinitionMap.put("/**", "anon");
         //配置shiro默认登录界面地址，前后端分离中登录界面跳转应由前端路由控制，后台仅返回json数据
         shiroFilterFactoryBean.setLoginUrl(loginUrl);
@@ -70,25 +71,9 @@ public class ShiroConfig {
         return shiroFilterFactoryBean;
     }
 
-    /**
-     * 凭证匹配器
-     * （由于我们的密码校验交给Shiro的SimpleAuthenticationInfo进行处理了
-     * ）
-     *
-     * @return
-     */
-    @Bean
-    public HashedCredentialsMatcher hashedCredentialsMatcher() {
-        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("md5");//散列算法:这里使用MD5算法;
-        hashedCredentialsMatcher.setHashIterations(2);//散列的次数，比如散列两次，相当于 md5(md5(""));
-        return hashedCredentialsMatcher;
-    }
-
     @Bean
     public UserRealm myShiroRealm() {
         UserRealm myShiroRealm = new UserRealm();
-        myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return myShiroRealm;
     }
 
@@ -114,17 +99,4 @@ public class ShiroConfig {
         return authorizationAttributeSourceAdvisor;
     }
 
-    /**
-     * 注册全局异常处理
-     * @return
-     */
-    @Bean(name = "exceptionHandler")
-    public HandlerExceptionResolver handlerExceptionResolver() {
-        return new HandlerExceptionResolver() {
-            @Override
-            public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-                return null;
-            }
-        };
-    }
 }

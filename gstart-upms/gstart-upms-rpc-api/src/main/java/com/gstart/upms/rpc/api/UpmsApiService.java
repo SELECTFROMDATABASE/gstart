@@ -2,6 +2,7 @@ package com.gstart.upms.rpc.api;
 
 import com.gstart.upms.rpc.api.pojo.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  */
 @RequestMapping(value = "/api/upms")
 public interface UpmsApiService {
-    @GetMapping(value = "/getbyaccount")
+    @PostMapping(value = "/getbyaccount")
     User getUserByAccount(User user);
     @GetMapping(value = "/getallusers")
     List<User> getAllUser();

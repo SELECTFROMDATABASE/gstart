@@ -1,4 +1,4 @@
-package com.gstart.upms.server.mock;
+package com.gstart.upms.service.mock;
 
 import com.gstart.upms.rpc.api.UpmsApiService;
 import org.springframework.cloud.openfeign.FeignClient;

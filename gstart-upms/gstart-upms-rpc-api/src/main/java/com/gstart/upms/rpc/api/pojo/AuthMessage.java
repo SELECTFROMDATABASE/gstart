@@ -1,4 +1,4 @@
-package com.gstart.upms.rpc.service.bean;
+package com.gstart.upms.rpc.api.pojo;
 
 /**
  * @author yangguangye

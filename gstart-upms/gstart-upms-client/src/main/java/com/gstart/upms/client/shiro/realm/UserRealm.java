@@ -4,11 +4,13 @@ import com.gstart.common.util.PropertyUtil;
 import com.gstart.upms.client.shiro.token.UserToken;
 import com.gstart.upms.rpc.api.UpmsApiService;
 import com.gstart.upms.rpc.api.pojo.User;
+import com.gstart.upms.service.mock.UpmsApiServiceMock;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
@@ -20,7 +22,7 @@ import java.util.Optional;
  */
 public class UserRealm extends AuthorizingRealm {
     @Autowired
-    private UpmsApiService upmsApiService;
+    private UpmsApiServiceMock upmsApiServiceMock;
 
     @Override
     public boolean supports(AuthenticationToken token) {
@@ -80,12 +82,12 @@ public class UserRealm extends AuthorizingRealm {
                         permissions.add(upmsPermission.getPermissionValue());
                     }
                 }*/
-                System.out.println(this.getClass() +" ----------------- doGetAuthorizationInfo");
+                System.out.println(this.getClass() +" server ----------------- doGetAuthorizationInfo");
                 SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
                 return simpleAuthorizationInfo;
             }
             case "doGetAuthenticationInfo" : {
-                System.out.println(this.getClass() +" ----------------- doGetAuthenticationInfo");
+                System.out.println(this.getClass() +" server ----------------- doGetAuthenticationInfo");
                 AuthenticationToken token = ((AuthenticationToken)o[0]);
                 String username = token.getPrincipal().toString();
                 String password = token.getCredentials().toString();
@@ -97,11 +99,8 @@ public class UserRealm extends AuthorizingRealm {
         }*/
 
                 // 查询用户信息
-/*
-                User upmsUser = upmsApiService.getUserByAccount(u);
-*/
-                User upmsUser = upmsApiService.getAllUser().get(0);
-
+                User upmsUser = upmsApiServiceMock.getUserByAccount(u);
+                System.out.println(upmsUser);
                 if (null == upmsUser) {
                     throw new UnknownAccountException();
                 }
@@ -122,12 +121,12 @@ public class UserRealm extends AuthorizingRealm {
     private Object client(String method,Object ... o){
         switch (method){
             case "doGetAuthorizationInfo" : {
-                System.out.println(this.getClass() +" ----------------- doGetAuthorizationInfo");
+                System.out.println(this.getClass() +" client ----------------- doGetAuthorizationInfo");
                 SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
                 return simpleAuthorizationInfo;
             }
             case "doGetAuthenticationInfo":{
-                System.out.println(this.getClass() +" ----------------- doGetAuthenticationInfo");
+                System.out.println(this.getClass() +" client ----------------- doGetAuthenticationInfo");
                 AuthenticationToken token = (AuthenticationToken) o[0];
 
                 UserToken oAuth2Token = (UserToken) token;
