@@ -19,7 +19,8 @@
         <hibernate.version>5.2.10.Final</hibernate.version>
         <dubbo.version>1.0.0</dubbo.version>
         <zookeeper.version>3.4.6</zookeeper.version>
-        <shiro.version>1.2.2</shiro.version>
+        <shiro.version>1.4.0</shiro.version>
+        <shiro.redis.version>3.1.0</shiro.redis.version>
         <logger.version>1.7.12</logger.version>
         <jwt.version>3.3.0</jwt.version>
         <oltu.version>1.0.1</oltu.version>
@@ -299,19 +300,22 @@
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-web</artifactId>
-            <version>${shiro.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-quartz</artifactId>
-            <version>${shiro.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>${shiro.version}</version>
         </dependency>
+        <!-- shiro ehcache -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <!-- shiro-redis -->
+        <dependency>
+            <groupId>org.crazycake</groupId>
+            <artifactId>shiro-redis</artifactId>
+            <version>${shiro.redis.version}</version>
+        </dependency>
+
 
         <!--json-web-token-->
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->

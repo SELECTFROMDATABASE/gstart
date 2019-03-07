@@ -12,8 +12,8 @@ import java.util.List;
  * @Create by gzpykj
  * @Date 2018-05-19 15:35
  */
-@RequestMapping(value = "/api/upms")
-public interface UpmsApiService {
+@RequestMapping(value = "/api/upms/user")
+public interface UpmsUserService {
     @PostMapping(value = "/getbyaccount")
     User getUserByAccount(User user);
     @GetMapping(value = "/getallusers")

@@ -1,23 +1,23 @@
 package com.gstart.upms.client.shiro;
 
+import com.gstart.common.util.PropertyUtil;
 import com.gstart.upms.client.shiro.filter.UpmsAuthenticationFilter;
 import com.gstart.upms.client.shiro.realm.UserRealm;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import com.gstart.upms.client.shiro.session.UpmsSessionManager;
+import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.SimpleCookie;
+import org.crazycake.shiro.RedisCacheManager;
+import org.crazycake.shiro.RedisManager;
+import org.crazycake.shiro.RedisSessionDAO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.ModelAndView;
-import org.apache.shiro.mgt.SecurityManager;
-
 
 import javax.servlet.Filter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -82,7 +82,71 @@ public class ShiroConfig {
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(myShiroRealm());
+        // 自定义缓存实现 使用redis
+        securityManager.setCacheManager(cacheManager());
+        // 自定义session管理 使用redis
+        securityManager.setSessionManager(sessionManager());
+
         return securityManager;
+    }
+
+    /**
+     * cacheManager 缓存 redis实现
+     * 使用的是shiro-redis开源插件
+     *
+     * @return
+     */
+    public RedisCacheManager cacheManager() {
+        RedisCacheManager redisCacheManager = new RedisCacheManager();
+        redisCacheManager.setRedisManager(redisManager());
+        redisCacheManager.setKeyPrefix("SPRINGBOOT_CACHE:");   //设置前缀
+        return redisCacheManager;
+    }
+
+    /**
+     * RedisSessionDAO shiro sessionDao层的实现 通过redis
+     * 使用的是shiro-redis开源插件
+     */
+    @Bean
+    public RedisSessionDAO redisSessionDAO() {
+        RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+        redisSessionDAO.setRedisManager(redisManager());
+        redisSessionDAO.setKeyPrefix("SPRINGBOOT_SESSION:");
+        return redisSessionDAO;
+    }
+
+    /**
+     * Session Manager
+     * 使用的是shiro-redis开源插件
+     */
+    @Bean
+    public SessionManager sessionManager() {
+        SimpleCookie simpleCookie = new SimpleCookie("Token");
+        simpleCookie.setPath("/");
+        simpleCookie.setHttpOnly(false);
+
+        UpmsSessionManager sessionManager = new UpmsSessionManager();
+        sessionManager.setSessionDAO(redisSessionDAO());
+        sessionManager.setSessionIdCookieEnabled(false);
+        sessionManager.setSessionIdUrlRewritingEnabled(false);
+        sessionManager.setDeleteInvalidSessions(true);
+        sessionManager.setSessionIdCookie(simpleCookie);
+        return sessionManager;
+    }
+
+    /**
+     * 配置shiro redisManager
+     * 使用的是shiro-redis开源插件
+     *
+     * @return
+     */
+    public RedisManager redisManager() {
+        RedisManager redisManager = new RedisManager();
+        redisManager.setHost(PropertyUtil.getInstance("redis.properties").get("master.redis.ip"));
+        redisManager.setPort(PropertyUtil.getInstance("redis.properties").getInt("master.redis.port"));
+        //redisManager.setTimeout(1800); //设置过期时间
+        redisManager.setPassword(PropertyUtil.getInstance("redis.properties").get("master.redis.password"));
+        return redisManager;
     }
 
     /**

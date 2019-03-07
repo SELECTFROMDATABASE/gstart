@@ -1,11 +1,10 @@
 package com.gstart.upms.rpc.service;
 
 import com.gstart.upms.repository.UserRepository;
-import com.gstart.upms.rpc.api.UpmsApiService;
+import com.gstart.upms.rpc.api.UpmsUserService;
 import com.gstart.upms.rpc.api.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * @Date 2018-05-19 15:35
  */
 @RestController
-public class UpmsApiServiceImpl implements UpmsApiService{
+public class UpmsUserServiceImpl implements UpmsUserService {
 
     @Autowired
     private UserRepository userRepository;
