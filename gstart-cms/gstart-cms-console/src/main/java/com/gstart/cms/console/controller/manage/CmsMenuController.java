@@ -1,9 +1,10 @@
 package com.gstart.cms.console.controller.manage;
 
-import com.gstart.cms.rpc.api.MenuService;
+import com.gstart.cms.console.mock.MenuServiceMock;
 import com.gstart.cms.rpc.api.pojo.Menu;
 import com.gstart.common.base.BaseController;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +23,11 @@ import java.util.List;
 public class CmsMenuController extends BaseController {
 
     @Autowired
-    private MenuService menuService;
+    private MenuServiceMock menuService;
 
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     @ResponseBody
+    @RequiresRoles(value = {"2"})
     public List<Menu> getMainMenu() {
 
         Subject subject = SecurityUtils.getSubject();

@@ -3,6 +3,7 @@ package com.gstart.cms.console.controller;
 
 import com.gstart.cms.rpc.api.MenuService;
 import com.gstart.common.base.BaseController;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +17,9 @@ public class ManageController extends BaseController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     @ResponseBody
+    @RequiresPermissions(value = {"2"})
     public String jsp() {
-        return "";
+        return "testManager";
     }
 
 }

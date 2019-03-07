@@ -14,6 +14,6 @@ import java.util.List;
  * @Date 2018-05-03 15:46
  */
 public interface MenuRepository extends JpaRepository<Menu,String> {
-    @Query(value = "from com.gstart.cms.dao.pojo.Menu where parentId  = 0")
+    @Query(value = "from com.gstart.cms.rpc.api.pojo.Menu where parentId  = 0")
     List<Menu> getMainMenu();
 }

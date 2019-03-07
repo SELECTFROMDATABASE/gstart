@@ -78,7 +78,7 @@ public class UpmsAuthenticationFilter extends BasicHttpAuthenticationFilter {
         System.out.println("------------ isAccessAllowed");
         if (type.equals("client")){
             //检查code有效性
-            return RedisFactory.exist(Optional.ofNullable(request.getParameter("auth")).orElseThrow(UserNoAuthException::new));
+            return RedisFactory.exist(Optional.ofNullable(((HttpServletRequest)request).getHeader("Authorization")).orElseThrow(UserNoAuthException::new));
         }else{
             return super.isAccessAllowed(request,response,mappedValue);
         }
