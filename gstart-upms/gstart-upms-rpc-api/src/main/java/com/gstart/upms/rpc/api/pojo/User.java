@@ -25,6 +25,18 @@ public class User implements Serializable{
     private String password;
     private String status;
 
+    @ManyToOne()
+    @JoinColumn(name = "positionId")
+    private Position position;
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
     public String getMainId() {
         return mainId;
     }
@@ -100,6 +112,7 @@ public class User implements Serializable{
                 ", type='" + type + '\'' +
                 ", password='" + password + '\'' +
                 ", status='" + status + '\'' +
+                ", position=" + position +
                 '}';
     }
 }

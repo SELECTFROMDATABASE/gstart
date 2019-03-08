@@ -6,6 +6,7 @@ import com.gstart.upms.client.shiro.realm.UserRealm;
 import com.gstart.upms.client.shiro.session.UpmsSessionManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -121,7 +122,7 @@ public class ShiroConfig {
      */
     @Bean
     public SessionManager sessionManager() {
-        SimpleCookie simpleCookie = new SimpleCookie("Token");
+        SimpleCookie simpleCookie = new SimpleCookie("Authorization");
         simpleCookie.setPath("/");
         simpleCookie.setHttpOnly(false);
 
@@ -142,10 +143,10 @@ public class ShiroConfig {
      */
     public RedisManager redisManager() {
         RedisManager redisManager = new RedisManager();
-        redisManager.setHost(PropertyUtil.getInstance("redis.properties").get("master.redis.ip"));
-        redisManager.setPort(PropertyUtil.getInstance("redis.properties").getInt("master.redis.port"));
+        redisManager.setHost(PropertyUtil.getInstance("redis").get("master.redis.ip"));
+        redisManager.setPort(PropertyUtil.getInstance("redis").getInt("master.redis.port"));
         //redisManager.setTimeout(1800); //设置过期时间
-        redisManager.setPassword(PropertyUtil.getInstance("redis.properties").get("master.redis.password"));
+        redisManager.setPassword(PropertyUtil.getInstance("redis").get("master.redis.password"));
         return redisManager;
     }
 
@@ -163,4 +164,8 @@ public class ShiroConfig {
         return authorizationAttributeSourceAdvisor;
     }
 
+    @Bean
+    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
+        return new LifecycleBeanPostProcessor();
+    }
 }

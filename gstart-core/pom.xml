@@ -24,7 +24,7 @@
         <logger.version>1.7.12</logger.version>
         <jwt.version>3.3.0</jwt.version>
         <oltu.version>1.0.1</oltu.version>
-
+        <gson.version>2.6.2</gson.version>
         <poi.version>3.15</poi.version>
         <jackson.version>2.9.4</jackson.version>
         <json.version>0.9</json.version>
@@ -113,7 +113,17 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>jackson-databind</artifactId>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                </exclusion>
             </exclusions>
+        </dependency>
+        <!-- 使用gson替代fastJson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

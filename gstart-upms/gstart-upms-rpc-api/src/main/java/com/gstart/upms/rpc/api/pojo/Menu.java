@@ -1,8 +1,11 @@
 package com.gstart.upms.rpc.api.pojo;
 
 import javax.persistence.*;
+import javax.persistence.criteria.Fetch;
+import javax.persistence.criteria.JoinType;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author yangguangye
@@ -14,7 +17,7 @@ import java.util.List;
 public class Menu implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    public String mainId;
+    public Integer mainId;
     public String parentId;
     public String menuNo;
     public String menuName;
@@ -36,9 +39,6 @@ public class Menu implements Serializable {
     private Menu parentMenu;
 
     @OneToMany(targetEntity = Menu.class, cascade = { CascadeType.ALL }, mappedBy = "parentMenu")
-/*
-    @Fetch(FetchMode.JOIN)
-*/
     @OrderBy("orderId desc")
     public List<Menu> childrenItems;
 
@@ -58,11 +58,11 @@ public class Menu implements Serializable {
         this.childrenItems = childrenItems;
     }
 
-    public String getMainId() {
+    public Integer getMainId() {
         return mainId;
     }
 
-    public void setMainId(String mainId) {
+    public void setMainId(Integer mainId) {
         this.mainId = mainId;
     }
 

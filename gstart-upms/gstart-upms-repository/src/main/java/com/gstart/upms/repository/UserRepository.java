@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Create by gzpykj
  * @Date 2018-05-14 14:07
  */
-public interface UserRepository extends JpaRepository<User,Integer> {
+public interface UserRepository extends JpaRepository<User,String> {
     /* public User getUserByAccount(User account) {
         return this.findOne(Example.of(account)).orElse(new User());
     }*/

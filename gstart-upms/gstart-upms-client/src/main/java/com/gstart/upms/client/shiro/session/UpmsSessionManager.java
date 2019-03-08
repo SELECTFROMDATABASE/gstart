@@ -19,7 +19,7 @@ import java.io.Serializable;
  * @Date 2019-03-07 21:02
  */
 public class UpmsSessionManager  extends DefaultWebSessionManager {
-    private static final String AUTHORIZATION = "Token";
+    private static final String AUTHORIZATION = "Authorization";
 
     private static final String REFERENCED_SESSION_ID_SOURCE = "Stateless request";
 
@@ -31,6 +31,7 @@ public class UpmsSessionManager  extends DefaultWebSessionManager {
         //获取请求头，或者请求参数中的Token
         String id = StringUtils.isEmpty(WebUtils.toHttp(request).getHeader(AUTHORIZATION))
                 ? request.getParameter(AUTHORIZATION) : WebUtils.toHttp(request).getHeader(AUTHORIZATION);
+        System.out.println(WebUtils.toHttp(request).getHeader(AUTHORIZATION));
         // 如果请求头中有 Token 则其值为sessionId
         if (StringUtils.isNotEmpty(id)) {
             request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_SOURCE, REFERENCED_SESSION_ID_SOURCE);

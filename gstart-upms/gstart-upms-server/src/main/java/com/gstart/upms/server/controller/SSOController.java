@@ -7,13 +7,14 @@ import com.gstart.common.util.RedisFactory;
 import com.gstart.upms.client.shiro.token.UserToken;
 import com.gstart.upms.rpc.api.pojo.AuthMessage;
 import com.gstart.upms.rpc.api.pojo.User;
-import com.gstart.upms.service.mock.UpmsApiServiceMock;
+import com.gstart.upms.service.mock.UpmsUserServiceMock;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -49,13 +50,14 @@ public class SSOController extends BaseController {
     SecurityManager securityManager;*/
 
     @Autowired
-    private UpmsApiServiceMock upmsApiServiceMock;
+    private UpmsUserServiceMock upmsUserServiceMock;
 
 
     @ResponseBody
     @GetMapping(value = "/getall")
+    @RequiresRoles(value = {"developer"})
     public List<User> getAll(){
-        return upmsApiServiceMock.getAllUser();
+        return upmsUserServiceMock.getAllUser();
     }
 
     @ResponseBody

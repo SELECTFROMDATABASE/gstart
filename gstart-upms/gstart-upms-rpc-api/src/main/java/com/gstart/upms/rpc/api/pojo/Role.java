@@ -1,6 +1,7 @@
 package com.gstart.upms.rpc.api.pojo;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,8 +14,8 @@ import java.util.Objects;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private String mainId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer mainId;
     private Integer parentId;
     private String roleNo;
     private String roleName;
@@ -23,11 +24,51 @@ public class Role {
     private Integer hasChild;
     private Integer isEnabled;
 
-    public String getMainId() {
+    @ManyToMany
+    @JoinTable(name = "g_sys_role_menu",
+            joinColumns = {@JoinColumn(name = "roleId")},
+            inverseJoinColumns = {@JoinColumn(name = "menuId")})
+    private List<Menu> menus;
+    @ManyToMany()
+    @JoinTable(name = "g_sys_role_position",
+            joinColumns = {@JoinColumn(name = "roleId")},
+            inverseJoinColumns = {@JoinColumn(name = "positionId")})
+    private List<Position> positions;
+    @ManyToMany()
+    @JoinTable(name = "g_sys_role_menuright",
+            joinColumns = {@JoinColumn(name = "roleId")},
+            inverseJoinColumns = {@JoinColumn(name = "menurightId")})
+    private List<MenuRight> menuRights;
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
+    }
+
+    public List<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<Position> positions) {
+        this.positions = positions;
+    }
+
+    public List<MenuRight> getMenuRights() {
+        return menuRights;
+    }
+
+    public void setMenuRights(List<MenuRight> menuRights) {
+        this.menuRights = menuRights;
+    }
+
+    public Integer getMainId() {
         return mainId;
     }
 
-    public void setMainId(String mainId) {
+    public void setMainId(Integer mainId) {
         this.mainId = mainId;
     }
 
@@ -106,5 +147,22 @@ public class Role {
     public int hashCode() {
 
         return Objects.hash(mainId, parentId, roleNo, roleName, remark, orderId, hasChild, isEnabled);
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "mainId=" + mainId +
+                ", parentId=" + parentId +
+                ", roleNo='" + roleNo + '\'' +
+                ", roleName='" + roleName + '\'' +
+                ", remark='" + remark + '\'' +
+                ", orderId=" + orderId +
+                ", hasChild=" + hasChild +
+                ", isEnabled=" + isEnabled +
+                ", menus=" + menus +
+                ", positions=" + positions +
+                ", menuRights=" + menuRights +
+                '}';
     }
 }

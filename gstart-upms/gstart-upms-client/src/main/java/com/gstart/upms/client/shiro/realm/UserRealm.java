@@ -104,7 +104,7 @@ public class UserRealm extends AuthorizingRealm {
                             for (Role role : roleList) {
                                 info.addRole(role.getRoleName());
 
-                                List<Menu> menuList = upmsMenuServiceMock.getAllMenuByRoleId(role.getMainId());
+                                List<Menu> menuList = upmsMenuServiceMock.getAllMenuByRoleId(String.valueOf(role.getMainId()));
                                 if (CollectionUtils.isNotEmpty(menuList)) {
                                     for (Menu menu : menuList) {
                                         //menuLabel 权限标识

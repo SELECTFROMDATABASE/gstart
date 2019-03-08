@@ -1,7 +1,9 @@
 package com.gstart.upms.rpc.api.pojo;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * @author yangguangye
@@ -14,15 +16,22 @@ public class MenuRight {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private String mainId;
+    private Integer mainId;
     private String rightName;
     private String rightLabel;
+    @ManyToMany(mappedBy = "menuRights")
+    private Set<Role> roles;
 
-    public String getMainId() {
+    @ManyToOne
+    @JoinColumn(name = "menuId")
+    private Menu menu;
+
+
+    public Integer getMainId() {
         return mainId;
     }
 
-    public void setMainId(String mainId) {
+    public void setMainId(Integer mainId) {
         this.mainId = mainId;
     }
 
@@ -56,5 +65,16 @@ public class MenuRight {
     public int hashCode() {
 
         return Objects.hash(mainId, rightName, rightLabel);
+    }
+
+    @Override
+    public String toString() {
+        return "MenuRight{" +
+                "mainId=" + mainId +
+                ", rightName='" + rightName + '\'' +
+                ", rightLabel='" + rightLabel + '\'' +
+                ", roles=" + roles +
+                ", menu=" + menu +
+                '}';
     }
 }
