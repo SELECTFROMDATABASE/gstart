@@ -4,19 +4,26 @@ import com.gstart.common.util.PropertyUtil;
 import com.gstart.upms.client.shiro.filter.UpmsAuthenticationFilter;
 import com.gstart.upms.client.shiro.realm.UserRealm;
 import com.gstart.upms.client.shiro.session.UpmsSessionManager;
+import com.gstart.upms.client.shiro.subject.UpmsSubjectFactory;
+import org.apache.shiro.codec.CodecSupport;
+import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
+import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.crazycake.shiro.RedisCacheManager;
 import org.crazycake.shiro.RedisManager;
 import org.crazycake.shiro.RedisSessionDAO;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 import javax.servlet.Filter;
 import java.util.HashMap;
@@ -87,6 +94,16 @@ public class ShiroConfig {
         securityManager.setCacheManager(cacheManager());
         // 自定义session管理 使用redis
         securityManager.setSessionManager(sessionManager());
+        //自定义Rememberme 管理
+        securityManager.setRememberMeManager(rememberMeManager());
+/*
+
+        DefaultSubjectDAO subjectDAO = (DefaultSubjectDAO) securityManager.getSubjectDAO();
+        DefaultSessionStorageEvaluator storageEvaluator =
+                (DefaultSessionStorageEvaluator)subjectDAO.getSessionStorageEvaluator();
+        UpmsSubjectFactory subjectFactory = new UpmsSubjectFactory(storageEvaluator);
+        securityManager.setSubjectFactory(subjectFactory);
+*/
 
         return securityManager;
     }
@@ -97,11 +114,31 @@ public class ShiroConfig {
      *
      * @return
      */
+
+    @Bean
     public RedisCacheManager cacheManager() {
+
         RedisCacheManager redisCacheManager = new RedisCacheManager();
         redisCacheManager.setRedisManager(redisManager());
         redisCacheManager.setKeyPrefix("SPRINGBOOT_CACHE:");   //设置前缀
         return redisCacheManager;
+    }
+
+    @Bean
+    public CookieRememberMeManager rememberMeManager() {
+        CookieRememberMeManager rememberMeManager = new CookieRememberMeManager();
+        rememberMeManager.setCipherKey(CodecSupport.toBytes("safwaefasdf2134++"));
+        rememberMeManager.setCookie(this.getRememberMeCookie());
+        return rememberMeManager;
+    }
+
+    @Bean
+    public SimpleCookie getRememberMeCookie() {
+        SimpleCookie simpleCookie = new SimpleCookie();
+        simpleCookie.setName("rememberMeCookie");
+        simpleCookie.setHttpOnly(Boolean.TRUE);
+        return simpleCookie;
+
     }
 
     /**
@@ -127,11 +164,11 @@ public class ShiroConfig {
         simpleCookie.setHttpOnly(false);
 
         UpmsSessionManager sessionManager = new UpmsSessionManager();
-        sessionManager.setSessionDAO(redisSessionDAO());
+        sessionManager.setSessionDAO(redisSessionDAO());/*
         sessionManager.setSessionIdCookieEnabled(false);
         sessionManager.setSessionIdUrlRewritingEnabled(false);
         sessionManager.setDeleteInvalidSessions(true);
-        sessionManager.setSessionIdCookie(simpleCookie);
+        sessionManager.setSessionIdCookie(simpleCookie);*/
         return sessionManager;
     }
 
@@ -141,6 +178,7 @@ public class ShiroConfig {
      *
      * @return
      */
+    @Bean
     public RedisManager redisManager() {
         RedisManager redisManager = new RedisManager();
         redisManager.setHost(PropertyUtil.getInstance("redis").get("master.redis.ip"));
@@ -150,22 +188,26 @@ public class ShiroConfig {
         return redisManager;
     }
 
+    @Bean
+    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
+        return new LifecycleBeanPostProcessor();
+    }
+
     /**
-     * 开启shiro aop注解支持.
-     * 使用代理方式;所以需要开启代码支持;
-     *
-     * @param securityManager
-     * @return
+     * 开启Shiro的注解(如@RequiresRoles,@RequiresPermissions),需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证 * 配置以下两个bean(DefaultAdvisorAutoProxyCreator(可选)和AuthorizationAttributeSourceAdvisor)即可实现此功能 * @return
      */
+    @Bean
+    @DependsOn({"lifecycleBeanPostProcessor"})
+    public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
+        DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+        advisorAutoProxyCreator.setProxyTargetClass(true);
+        return advisorAutoProxyCreator;
+    }
+
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
         AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
         authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
         return authorizationAttributeSourceAdvisor;
-    }
-
-    @Bean
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
-        return new LifecycleBeanPostProcessor();
     }
 }

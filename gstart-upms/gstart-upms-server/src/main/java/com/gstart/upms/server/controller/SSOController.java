@@ -4,6 +4,7 @@ import com.gstart.common.base.BaseController;
 import com.gstart.common.bean.Message;
 import com.gstart.common.util.RandomUtil;
 import com.gstart.common.util.RedisFactory;
+import com.gstart.common.util.SerializableUtil;
 import com.gstart.upms.client.shiro.token.UserToken;
 import com.gstart.upms.rpc.api.pojo.AuthMessage;
 import com.gstart.upms.rpc.api.pojo.User;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
@@ -138,7 +140,7 @@ public class SSOController extends BaseController {
         while(RedisFactory.exist(auth)){
             auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
         }
-        RedisFactory.set(auth,(subject).toString());
+        RedisFactory.set(auth,subject.toString());
         return auth;
     }
 

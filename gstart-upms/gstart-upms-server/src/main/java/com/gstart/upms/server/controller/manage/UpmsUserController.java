@@ -2,6 +2,7 @@ package com.gstart.upms.server.controller.manage;
 
 import com.gstart.common.base.BaseController;
 import com.gstart.upms.rpc.api.pojo.User;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -23,5 +24,12 @@ public class UpmsUserController extends BaseController {
             return "false";
         }
 
+    }
+
+    @CrossOrigin(origins = "*", maxAge = 3600)
+    @RequestMapping(value = "/get" ,method = RequestMethod.GET)
+    @RequiresRoles("123")
+    public String hello(){
+        return "hello";
     }
 }
