@@ -26,6 +26,9 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
+import static com.gstart.upms.client.shiro.ShiroConfig.AUTHORIZATION;
+import static com.gstart.upms.client.shiro.ShiroConfig.SESSIONIDPREFIX;
+
 /**
  * @author yangguangye
  * @Create by gzpykj
@@ -78,8 +81,10 @@ public class SSOController extends BaseController {
             try {
                 Subject subject = SecurityUtils.getSubject();
                 UserToken token = new UserToken.Server().username(u.getAccount()).password(u.getPassword()).build();
+
                 //4、登录，即身份验证
                 login(subject,token);
+
                 //注册授权码
                 String authCode = auth(subject);
                 AuthMessage message1 = new AuthMessage();
@@ -136,12 +141,8 @@ public class SSOController extends BaseController {
     }
 
     private String auth(Subject subject){
-        String auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
-        while(RedisFactory.exist(auth)){
-            auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
-        }
-        RedisFactory.set(auth,subject.toString());
-        return auth;
+        System.out.println(subject.getSession(true).getAttributeKeys());
+        return null;
     }
 
 }

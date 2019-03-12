@@ -6,6 +6,7 @@ import com.gstart.upms.client.shiro.exception.UserNoAuthException;
 import com.gstart.upms.client.shiro.token.UserToken;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -44,7 +45,8 @@ public class UpmsAuthenticationFilter extends BasicHttpAuthenticationFilter {
         //若客户端，创建UserToken
         System.out.println("------------ createToken");
 
-        String auth = request.getParameter("auth");
+
+        String auth = WebUtils.toHttp(request).getHeader("Authorization");
         if (type.equals("client"))
             return new UserToken.Client().auth(auth).build();
         else

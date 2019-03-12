@@ -1,6 +1,8 @@
 package com.gstart.upms.client.shiro;
 
 import com.gstart.common.util.PropertyUtil;
+import com.gstart.common.util.RandomUtil;
+import com.gstart.common.util.RedisFactory;
 import com.gstart.upms.client.shiro.filter.UpmsAuthenticationFilter;
 import com.gstart.upms.client.shiro.realm.UserRealm;
 import com.gstart.upms.client.shiro.session.UpmsSessionManager;
@@ -9,7 +11,9 @@ import org.apache.shiro.codec.CodecSupport;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.session.mgt.eis.SessionIdGenerator;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -26,6 +30,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
 import javax.servlet.Filter;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -45,6 +50,15 @@ public class ShiroConfig {
     private String unauthorizedUrl;
     @Value("${gstart.upms.successUrl}")
     private String successUrl;
+
+    public static String SESSIONIDPREFIX;
+    public static String AUTHORIZATION = "Authorization";
+    public static String REFERENCED_SESSION_ID_SOURCE = "Stateless request";
+
+    @Value("${gstart.upms.session.id}")
+    public static void setSESSIONIDPREFIX(String SESSIONIDPREFIX) {
+        ShiroConfig.SESSIONIDPREFIX = SESSIONIDPREFIX;
+    }
 
     @Bean
     public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
@@ -148,8 +162,15 @@ public class ShiroConfig {
     @Bean
     public RedisSessionDAO redisSessionDAO() {
         RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+        redisSessionDAO.setSessionIdGenerator(session -> {
+            String auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
+            while(RedisFactory.exist(auth)){
+                auth = RandomUtil.getRandomString(30, RandomUtil.TYPE.LETTER_CAPITAL_NUMBER);
+            }
+            return auth;
+        });
         redisSessionDAO.setRedisManager(redisManager());
-        redisSessionDAO.setKeyPrefix("SPRINGBOOT_SESSION:");
+        redisSessionDAO.setKeyPrefix(SESSIONIDPREFIX);
         return redisSessionDAO;
     }
 
@@ -159,7 +180,7 @@ public class ShiroConfig {
      */
     @Bean
     public SessionManager sessionManager() {
-        SimpleCookie simpleCookie = new SimpleCookie("Authorization");
+        SimpleCookie simpleCookie = new SimpleCookie(AUTHORIZATION);
         simpleCookie.setPath("/");
         simpleCookie.setHttpOnly(false);
 
